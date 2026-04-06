@@ -3,7 +3,7 @@ title: "Claude Code で GTD を回す /todo スラッシュコマンドを作っ
 emoji: "✅"
 type: "tech"
 topics: ["claudecode", "gtd", "github", "cli", "productivity"]
-published: false
+published: true
 ---
 
 ## 作ったもの
