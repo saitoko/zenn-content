@@ -6,13 +6,6 @@ topics: ["claudecode", "gtd", "agent", "automation", "ai"]
 published: false
 ---
 
-## 要約
-
-- Claude Code の秘書エージェントに GTD のブレインダンプ→仕分けを任せた
-- 開発タスクは指示書を書いてエージェントに並列実行させた
-- 人間がやったのは「朝の質問に答えること」と「指示書を書くこと」だけ
-- 結果: 記事3本 + i18n実装 + モバイル対応 + 363テスト全パスを1日で達成
-
 ## 🧠 GTD、やってますか？
 
 「あれやらなきゃ」「あの件どうなったっけ」「そういえばあの返信...」
@@ -99,9 +92,9 @@ graph TD
     end
     D --> E
     G --> H
-    style morning fill:#F57F17,stroke:#E65100,color:#fff
-    style daytime fill:#1565C0,stroke:#0D47A1,color:#fff
-    style evening fill:#7B1FA2,stroke:#4A148C,color:#fff
+    style morning fill:#F57F17,stroke:#E65100
+    style daytime fill:#1565C0,stroke:#0D47A1
+    style evening fill:#7B1FA2,stroke:#4A148C
 ```
 
 `/todo` の裏側は GitHub Issues なので、**どのエージェントからも同じタスクリストが見えます**。秘書がタスクを登録し、開発エージェントが完了マークを付け、夕方のレビューで進捗を確認する。人間がやるのは朝の質問に答えることと、指示書を書くことだけ。
@@ -247,6 +240,10 @@ mkdir -p secretary/.claude
   }
 }
 ```
+:::
+
+:::message
+権限の記法は Claude Code のバージョンによって異なる場合があります。動作しない場合は `settings.local.json` の `permissions.allow` に合わせて調整してください。
 :::
 
 :::details 4. ブレインダンプ用のワークフローを置く

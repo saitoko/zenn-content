@@ -34,9 +34,11 @@ published: false
 
 Claude Code 用の `/todo` コマンドを開発中、テストを実行するたびに **`~/.claude/` ディレクトリごと消滅**していました。ログイン情報（`.credentials.json`）、セッション、設定ファイル、全部。
 
-## 犯人のコード
+## 罠その1: HOME 復元後の rm -rf
 
 テンプレート機能の英語出力テストで、本物の `~/.claude/todo-templates.json` を汚染しないよう `HOME` を一時ディレクトリに差し替えていました。
+
+### 犯人のコード
 
 ```bash
 # HOME を一時ディレクトリに差し替え
@@ -60,7 +62,7 @@ rm -rf "$HOME/.claude"   # ← ここ
 
 ログイン情報（`.credentials.json`）、セッション情報、設定ファイル、すべて消滅。
 
-## 修正
+### 修正
 
 一時ディレクトリのパスを別変数で保持するだけです。
 
@@ -98,6 +100,11 @@ HOME=/tmp/fake node -e "console.log(require('os').homedir())"
 ```
 
 テストで `HOME` を差し替えても、Node.js は本物のホームディレクトリを見続けていたのです。
+
+| OS | `os.homedir()` が参照する値 |
+|----|----|
+| Linux / macOS | `HOME` 環境変数 |
+| Windows | `USERPROFILE` 環境変数 |
 
 ### 修正
 
@@ -160,14 +167,7 @@ rm -rf "$FAKE_HOME"           # ← 偽物を消す
 
 ### 2. Windows + Node.js では `USERPROFILE` も差し替える
 
-`os.homedir()` の挙動は OS で異なります。
-
-| OS | `os.homedir()` が参照する値 |
-|----|----|
-| Linux / macOS | `HOME` 環境変数 |
-| Windows | `USERPROFILE` 環境変数 |
-
-クロスプラットフォームのテストでは両方を差し替えましょう。
+`os.homedir()` の挙動は OS で異なります。クロスプラットフォームのテストでは `HOME` と `USERPROFILE` の両方を差し替えましょう。
 
 ### 3. テストが何を壊すかは、テスト自身は教えてくれない
 

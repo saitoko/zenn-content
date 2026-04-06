@@ -10,13 +10,13 @@ published: false
 
 Claude Code 用の GTD タスク管理スラッシュコマンド `/todo` を作りました。
 
-https://github.com/saitoko/claude-todo-gtd
-
-前回の記事:
-
 https://zenn.dev/tottoko_hamu/articles/claude-code-todo-gtd
 
 今回は、このコマンドを英語でも使えるようにした話です。
+
+## なぜ英語対応？
+
+`/todo` を GitHub で公開した以上、英語圏の Claude Code ユーザーにも使ってほしい。実際、Claude Code 自体が英語ベースのツールなので、日本語オンリーだと「面白そうだけど読めない」で離脱されてしまいます。あと単純に、英語で `--due tomorrow` と打てたらかっこいいじゃないですか。
 
 ## やったこと
 
@@ -42,7 +42,9 @@ https://zenn.dev/tottoko_hamu/articles/claude-code-todo-gtd
 
 ## 設計: 単一ファイル完結の i18n
 
-i18n ライブラリや外部 JSON ファイルは使っていません。`todo-engine.js` 内にメッセージ辞書を持ち、3つのヘルパー関数で切り替えます。
+i18n ライブラリや外部 JSON ファイルは使っていません。i18next や gettext も検討しましたが、`/todo` はスラッシュコマンド1ファイルで完結するのが売り。外部依存を足した瞬間にその良さが消えるので、最初から「辞書をファイル内に持つ」一択でした。
+
+`todo-engine.js` 内にメッセージ辞書を持ち、3つのヘルパー関数で切り替えます。
 
 ```javascript
 const LANG = process.env.LANG_ENV || 'ja';
@@ -139,6 +141,22 @@ LANG_ENV=en /todo next Task --due 明日
 - **エラーメッセージ** — バリデーションエラー全種
 
 `todo.md`（スキル本体）側も変更し、Claude が英語で応答するよう条件分岐を追加しました。
+
+たとえば `stats` コマンドの英語出力はこうなります:
+
+```
+📊 Task Statistics
+──────────────────
+By Priority:
+  🔴 p1: 2
+  🟡 p2: 3
+  ⚪ p3: 1
+
+Due Status:
+  ⚠️ Overdue: 1
+  📅 Due today: 2
+  📅 Due this week: 3
+```
 
 ## テスト
 
