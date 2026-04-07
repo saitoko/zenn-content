@@ -3,7 +3,7 @@ title: "Claude Code のエージェントに /todo を持たせたら、1日で�
 emoji: "🤖"
 type: "tech"
 topics: ["claudecode", "gtd", "agent", "automation", "ai"]
-published: false
+published: true
 ---
 
 ## 🧠 GTD、やってますか？
