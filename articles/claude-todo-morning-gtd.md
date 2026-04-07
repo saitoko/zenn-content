@@ -3,7 +3,8 @@ title: "Claude Code と朝10分の GTD — 対話するだけでタスクが構�
 emoji: "☀️"
 type: "tech"
 topics: ["claudecode", "gtd", "productivity", "ai", "taskmanagement"]
-published: true
+published: false
+published_at: 2026-04-11 00:00
 ---
 
 ## ☀️ 「おはよう」から始まる GTD

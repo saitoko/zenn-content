@@ -1,0 +1,45 @@
+name: Scheduled Publish
+
+on:
+  schedule:
+    # 毎日 00:00 JST (= 15:00 UTC 前日)
+    - cron: '0 15 * * *'
+  workflow_dispatch: # 手動実行も可能
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Find and publish one scheduled article
+        run: |
+          TODAY=$(TZ=Asia/Tokyo date +%Y-%m-%d)
+          echo "Today (JST): $TODAY"
+
+          PUBLISHED=false
+          for f in articles/*.md; do
+            # published: false かつ published_at が今日以前の記事を探す
+            PUB=$(grep -m1 '^published:' "$f" | sed 's/published: *//')
+            PAT=$(grep -m1 '^published_at:' "$f" | sed 's/published_at: *//' | cut -d' ' -f1)
+
+            if [ "$PUB" = "false" ] && [ -n "$PAT" ] && [[ "$PAT" < "$TODAY" || "$PAT" == "$TODAY" ]]; then
+              echo "Publishing: $f (scheduled: $PAT)"
+              sed -i 's/^published: false/published: true/' "$f"
+              PUBLISHED=true
+              break  # 1日1記事のみ
+            fi
+          done
+
+          if [ "$PUBLISHED" = "false" ]; then
+            echo "No articles to publish today."
+          fi
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "publish: 予約公開 $(TZ=Asia/Tokyo date +%Y-%m-%d)"
+          git push
