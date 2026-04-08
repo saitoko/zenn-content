@@ -3,7 +3,7 @@ title: "Claude Code の /todo コマンドを英語対応した（LANG_ENV=en）
 emoji: "🌐"
 type: "tech"
 topics: ["claudecode", "i18n", "gtd", "github", "cli"]
-published: false
+published: true
 published_at: 2026-04-08 00:00
 ---
 
