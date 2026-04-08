@@ -4,7 +4,6 @@ emoji: "🤖"
 type: "tech"
 topics: ["claudecode", "gtd", "agent", "automation", "ai"]
 published: false
-published_at: 2026-04-10 00:00
 ---
 
 ## 🧠 GTD、やってますか？
