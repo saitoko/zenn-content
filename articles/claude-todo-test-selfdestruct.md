@@ -3,7 +3,7 @@ title: "テストが ~/.claude/ を消し飛ばした話 — HOME 差し替え�
 emoji: "💥"
 type: "tech"
 topics: ["テスト", "bash", "nodejs", "windows", "claudecode"]
-published: false
+published: true
 ---
 
 ## テストは通る。だが代償があった。

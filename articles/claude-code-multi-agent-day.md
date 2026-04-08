@@ -3,7 +3,7 @@ title: "AIチーム6人と過ごした1日 — Claude Code マルチエージェ
 emoji: "🏭"
 type: "tech"
 topics: ["claudecode", "ai", "multiagent", "productivity", "automation"]
-published: false
+published: true
 ---
 
 今朝、6人のAIチームに「出社指示」を出しました。
