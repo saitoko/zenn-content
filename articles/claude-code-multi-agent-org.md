@@ -3,7 +3,7 @@ title: "Claude Code でAIチームを組織した — CEO・DevOps・Writer・Re
 emoji: "🏢"
 type: "tech"
 topics: ["claudecode", "ai", "multiagent", "productivity", "automation"]
-published: false
+published: true
 ---
 
 「1つの Claude Code で何でもやる」に限界を感じたのは、CLAUDE.md が50行を超えたあたりでした。
