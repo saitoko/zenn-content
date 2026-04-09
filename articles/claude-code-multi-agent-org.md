@@ -25,6 +25,7 @@ CEO ─── オーケストレーション（人間が直接対話）
 ├── todo-dev ─── /todo スキル開発
 └── health-dev ─ /health スキル開発
 ```
+> ※ この記事は執筆時点（2026年4月初旬）の構成です。その後 reviewer を独立エージェントとして分離しました。
 
 人間が対話するのは CEO だけ。CEO が状況を判断して、各エージェントに仕事を振ります。開発はしない。コードも書かない。**指示と判断だけ**が CEO の仕事です。
 
@@ -226,7 +227,7 @@ grep -rl "status: ready" logs/
 
 この差し戻しでは `review: required` フィールドが活きました。インフラ系の指示書にはレビュー必須を設定しておくことで、resarcher が実行前にファクトチェックを行います。記事執筆のような定型業務は `review: skip` で直接実行。**全件レビューではなくリスクベースで品質ゲートを制御する**仕組みです。
 
-差し戻しの具体的なやりとり（指摘6点の詳細）は、[続編の体験記事](https://zenn.dev/saitoko/articles/claude-code-multi-agent-day)で紹介しています。
+差し戻しの具体的なやりとり（指摘6点の詳細）は、[続編の体験記事](https://zenn.dev/tottoko_hamu/articles/claude-code-multi-agent-day)で紹介しています。
 
 ## Before / After
 

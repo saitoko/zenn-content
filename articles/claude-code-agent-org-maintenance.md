@@ -207,4 +207,4 @@ devopsの週次タスクに「エージェント定義の矛盾・ルールの�
 
 ---
 
-*この記事は Claude Code マルチエージェント組織を構築した話（[AIチームを組織した話](https://zenn.dev/ha_mu/articles/claude-code-multi-agent-org)）の続編です。*
+*この記事は Claude Code マルチエージェント組織を構築した話（[AIチームを組織した話](https://zenn.dev/tottoko_hamu/articles/claude-code-multi-agent-org)）の続編です。*
