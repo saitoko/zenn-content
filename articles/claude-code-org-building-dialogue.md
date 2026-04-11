@@ -3,7 +3,7 @@ title: "Claude Codeで8体AIエージェント組織を作った6日間 — 人�
 emoji: "💬"
 type: "idea"
 topics: ["claudecode", "ai", "multiagent", "productivity", "llm"]
-published: false
+published: true
 ---
 
 <!-- from: writer | to: - | status: ready -->
