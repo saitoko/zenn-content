@@ -65,6 +65,8 @@ Remote Trigger API でトリガーを更新する際、`job_config` の一部だ
 
 プロンプトの冒頭に「初期化セクション」を追加して、実行環境を問わずリポジトリルートを自力で探索させる。
 
+以下のテンプレートを自分のリポジトリ名・ファイルパスに書き換えて、プロンプトの冒頭に貼り付ける。
+
 ```markdown
 ## 初期化（必ず最初に実行すること）
 
@@ -149,17 +151,11 @@ Daily Dispatcher の `outcomes` に `branches: ["master"]` と設定していた
 
 **正攻法: Cloud Environment の環境変数を使う**
 
-`claude.ai/code/scheduled` の環境設定（Environment variables）に `.env` 形式でトークンを記述する。スクリプト側に変更は不要で、既存のフォールバックロジックで自動的に環境変数を優先して読む。個人利用の場合は環境変数での管理で問題ないが、セキュリティポリシーが厳しい環境では注意が必要だ。
+`claude.ai/code/scheduled` の環境設定（Environment variables）に `.env` 形式でトークンを記述する。スクリプト側に変更は不要で、既存のフォールバックロジックで自動的に環境変数を優先して読む。
 
-**MCPコネクタという選択肢は現時点で使えない**
+現時点でリモートにシークレットを渡す手段はこの環境変数のみだ。設定値は平文で保存されることに留意しておきたい。Anthropicへの提言でも触れるが、暗号化されたSecrets Storeの提供が待ち望まれる。
 
-スケジュール実行時に MCP コネクタのツールがロードされないバグが複数報告されている。
-
-- [#35899](https://github.com/anthropics/claude-code/issues/35899): "Scheduled tasks cannot access MCP connectors until a user message warms the session"（Open）
-- [#43397](https://github.com/anthropics/claude-code/issues/43397): "MCP tools unavailable in scheduled remote trigger sessions"（Open）
-- [#44785](https://github.com/anthropics/claude-code/issues/44785): "Scheduled remote triggers can't access claude.ai MCP connectors"（Closed as not planned）
-
-#44785 が「not planned」でクローズされており、MCPコネクタ経由のシークレット受け渡しは当面期待できない状況だ。
+> [補足] MCPコネクタ経由でシークレットを渡す方法も検討したが、スケジュール実行時にMCPコネクタが使えないバグが複数報告されている（[#35899](https://github.com/anthropics/claude-code/issues/35899) ほか）。うち1件は「修正予定なし」でクローズされており、当面この方式は使えない。
 
 ---
 
@@ -200,10 +196,6 @@ Remote Trigger で外部ツールを使う場合は「そのバイナリはLinux
 **成功通知を仕込んで「通知が来ない＝異常」を作る**
 
 失敗時の通知だけでなく、成功時にも Slack 通知を入れる。通知が来ない朝が「異常のシグナル」になる。プロンプト消失のように通知自体が動かないケースの検出にも有効だ。
-
-**最初の1〜2週間は毎日ログを確認する**
-
-安定稼働を確認するまでは `claude.ai/code/scheduled` で実行履歴を目視する。「数日間は動いていた」は「正常」ではなく「偶然」の可能性がある。
 
 ---
 
