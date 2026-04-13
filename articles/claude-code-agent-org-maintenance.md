@@ -3,7 +3,7 @@ title: "AIエージェント組織、3日で散らかった話 — チャット�
 emoji: "🗂️"
 type: "tech"
 topics: ["claudecode", "multiagent", "aiagent", "management"]
-published: false
+published: true
 ---
 
 「Zennの記事、全部公開済みになってますか？」
