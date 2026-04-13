@@ -15,7 +15,7 @@ published: false
 
 ある朝、Daily Dispatcher が動いていないことに気づいた。前日まで正常だったのに、ログが残っていない。
 
-`claude.ai/code/scheduled` を開いてトリガーの設定画面を見ると、プロンプトの `events` フィールドがまるごと空になっていた。
+`claude.ai/code/scheduled` を開いてトリガーの設定画面を見ると、プロンプトの `events`（トリガー実行時にエージェントに渡すプロンプトを定義するフィールド）がまるごと空になっていた。
 
 「何もしていないのに壊れた」——そのパターンを6件経験した。以下はその記録と対処法だ。
 
@@ -25,11 +25,11 @@ published: false
 
 ### 何が起きたか
 
-Daily Dispatcher のプロンプト（`events` フィールド）が消えた。`session_context` の `outcomes` は残っているのに、プロンプト本体だけが抜け落ちていた。
+Daily Dispatcher のプロンプト（`events` フィールド）が消えた。`session_context` の `outcomes`（エージェントの変更をpushする先のリポジトリ・ブランチを指定する設定）は残っているのに、プロンプト本体だけが抜け落ちていた。
 
 ### 推定原因
 
-Remote Trigger API でトリガーを更新する際、`job_config` の一部だけを送ると、APIがそのフィールドを **deep merge ではなくオブジェクト置換** で処理している可能性がある。`events` を含めずに `job_config.ccr` を送った結果、`events` フィールドがまるごと落ちた。
+Remote Trigger API でトリガーを更新する際、`job_config` の一部だけを送ると、APIがそのフィールドを **deep merge ではなくオブジェクト置換** で処理している可能性がある。`events` を含めずに `job_config.ccr`（トリガーの実行設定全体を格納するオブジェクト）を送った結果、`events` フィールドがまるごと落ちた。
 
 > [補足] これは実挙動から推定した仮説で、API仕様書に明記された内容ではない。
 
@@ -51,13 +51,13 @@ Remote Trigger API でトリガーを更新する際、`job_config` の一部だ
 
 ### 何が起きたか
 
-トリガーの `sources` に2つのリポジトリ（`000-partner` と `zenn-content`）を指定していた。数日間は正常に動いていたが、ある日突然 `.claude/schedules/daily.md が存在しません` というエラーが出てタスクが全て失敗した。
+トリガーの `sources`（リモートセッションにクローンするリポジトリを指定する設定）に2つのリポジトリ（メインリポジトリと Zenn リポジトリ）を指定していた。数日間は正常に動いていたが、ある日突然 `.claude/schedules/daily.md が存在しません` というエラーが出てタスクが全て失敗した。
 
-調べると、リモートエージェントの初期ワーキングディレクトリが `zenn-content` になっていた。`daily.md` は `000-partner` にあるため、見つからない。
+調べると、リモートエージェントの初期ワーキングディレクトリが Zenn リポジトリになっていた。`daily.md` はメインリポジトリにあるため、見つからない。
 
 ### なぜ数日間は気づかなかったか
 
-初期ディレクトリがどちらになるかは**保証されていない**。偶然 `000-partner` で起動し続けていた状態が、ある日崩れた。1リポジトリのみの Hourly Dispatcher ではこの問題は発生しないため、比較対象がなくて原因特定に時間がかかった。
+初期ディレクトリがどちらになるかは**保証されていない**。偶然メインリポジトリで起動し続けていた状態が、ある日崩れた。1リポジトリのみの Hourly Dispatcher ではこの問題は発生しないため、比較対象がなくて原因特定に時間がかかった。
 
 この問題はGitHub Issuesに報告済みだ（[#47604](https://github.com/anthropics/claude-code/issues/47604): "Remote Trigger: initial working directory is non-deterministic with multiple source repositories"）。現在もオープン。
 
@@ -71,7 +71,7 @@ Remote Trigger API でトリガーを更新する際、`job_config` の一部だ
 ## 初期化（必ず最初に実行すること）
 
 1. ls でカレントディレクトリを確認する
-2. 000-partner ディレクトリを探す:
+2. メインリポジトリのディレクトリを探す:
    find . -name "daily.md" -path "*schedules*" 2>/dev/null | head -5
 3. 見つかったパスから cd で移動してから処理を開始する
 4. 見つからない場合は「リポジトリが見つかりませんでした」とログに記録して終了する
@@ -113,7 +113,7 @@ Remote Trigger API には `list` / `get` / `create` / `update` / `run` しかな
 
 ### 何が起きたか
 
-Daily Dispatcher の `outcomes` に `branches: ["master"]` と設定していた。しかし `zenn-content` リポジトリのデフォルトブランチは `main` だった。
+Daily Dispatcher の `outcomes` に `branches: ["master"]` と設定していた。しかし Zenn リポジトリのデフォルトブランチは `main` だった。
 
 リモートエージェントが push しようとした際、`master` ブランチが存在しないため `master-9nHf9` というサフィックス付きの新ブランチが自動生成された。コミットは入るが Zenn にデプロイされない。
 
@@ -121,7 +121,7 @@ Daily Dispatcher の `outcomes` に `branches: ["master"]` と設定していた
 
 - リモートエージェントのログ上は「push 完了」と表示される（エラーにはならない）
 - Zenn側で「記事が公開されない」という症状だが、原因がブランチ名だとは思わない
-- `000-partner`（master）と `zenn-content`（main）でデフォルトブランチ名が異なることを普段意識していない
+- メインリポジトリ（master）と Zenn リポジトリ（main）でデフォルトブランチ名が異なることを普段意識していない
 
 ### 対処法
 
@@ -129,7 +129,7 @@ Daily Dispatcher の `outcomes` に `branches: ["master"]` と設定していた
 
 ```json
 "outcomes": {
-  "branches": ["main"]  // zenn-content は main
+  "branches": ["main"]  // Zenn リポジトリは main
 }
 ```
 
