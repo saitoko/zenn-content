@@ -3,7 +3,7 @@ title: "AIエージェント組織、3日で散らかった話 — チャット�
 emoji: "🗂️"
 type: "tech"
 topics: ["claudecode", "multiagent", "aiagent", "management"]
-published: false
+published: true
 ---
 
 **「なんかおかしくない？」——その一言で、logs/ 37件→7件（81%削減）、53ファイルの再編が動き出した。Claude Codeマルチエージェント組織を3日で散らかし、チャットだけで立て直した実録です。**
