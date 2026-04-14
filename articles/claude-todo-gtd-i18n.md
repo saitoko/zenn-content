@@ -152,7 +152,7 @@ By Priority:
   🟡 p2: 3
   ⚪ p3: 1
 
-Due Status:
+Deadlines:
   ⚠️ Overdue: 1
   📅 Due today: 2
   📅 Due this week: 3
@@ -160,7 +160,7 @@ Due Status:
 
 ## テスト
 
-英語出力テスト53件を追加し、合計 **363テスト** すべてパス。
+英語出力テスト62件を追加し、合計 **363テスト** すべてパス（`grep -c '"en:' run-tests.sh` 実測）。
 
 ```bash
 # 日本語テスト（デフォルト）

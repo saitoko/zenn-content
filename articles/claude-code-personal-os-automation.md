@@ -20,7 +20,7 @@ published: false
 ```
 CEO ─── オーケストレーション（人間が直接対話）
 ├── devops ──── 開発基盤・インフラメンテナンス
-├── resarcher ── 調査・分析
+├── researcher ── 調査・分析
 ├── reviewer ─── コードレビュー・記事レビュー（品質ゲート）
 ├── secretary ── 情報整理・GitHub Issue管理・ルーティング
 ├── writer ───── 記事執筆・Zenn/Qiita/はてな投稿
@@ -37,7 +37,7 @@ secretary は見えにくいですが重要なポジションです。GitHub Iss
 | 軸 | 担当エージェント | やること |
 |---|---|---|
 | タスク管理 | secretary / todo-dev | GTD + GitHub Issues で全タスクを管理 |
-| リサーチ | resarcher | 調査・競合分析 |
+| リサーチ | researcher | 調査・競合分析 |
 | 発信 | writer | 記事執筆・Zenn/Qiita/はてなへの自動投稿 |
 | 健康管理 | health-dev | 体重・運動記録・GTDタスクとの自動連携 |
 
@@ -50,7 +50,7 @@ secretary は見えにくいですが重要なポジションです。GitHub Iss
 ```yaml
 # logs/2026-04-08_report_article-automation.md の冒頭
 ---
-from: resarcher
+from: researcher
 to: writer
 status: ready
 ---
@@ -102,25 +102,25 @@ todo-dev エージェントが独立したワーキングディレクトリで�
 
 ## 第3章: リサーチ軸 — researcherが調査→引き継ぐ
 
-知的生産の品質は、インプットの質で決まります。resarcher エージェントはその入口を守っています。
+知的生産の品質は、インプットの質で決まります。researcher エージェントはその入口を守っています。
 
 担当業務は**調査・分析**です。
 
-調査フローはシンプルです。CEO が「○○を調べて」と指示を出す → resarcher が `logs/` にレポートを保存する → CEO が読んで判断する。
+調査フローはシンプルです。CEO が「○○を調べて」と指示を出す → researcher が `logs/` にレポートを保存する → CEO が読んで判断する。
 
 ```
 CEO: 「Claude Code マルチエージェント環境における
       指示書管理のベストプラクティスを調査して」
      ↓
-resarcher: 公式ドキュメント + 実践記事を横断調査
+researcher: 公式ドキュメント + 実践記事を横断調査
      ↓
 logs/2026-04-07_report_multi-agent-instruction-management.md
-（from: resarcher / to: CEO / status: ready）
+（from: researcher / to: CEO / status: ready）
      ↓
 CEO: 6提案のうち高優先度3つを採用・3つを見送り
 ```
 
-「何をやらないか」を決めるのが CEO の仕事です。resarcher の提案を全部採用するのではなく、コストと優先度で取捨選択する。ここは人間の判断が入る最重要ポイントです。
+「何をやらないか」を決めるのが CEO の仕事です。researcher の提案を全部採用するのではなく、コストと優先度で取捨選択する。ここは人間の判断が入る最重要ポイントです。
 
 品質管理は reviewer が担当します。指示書のヘッダーに `review: required` を付けると、実行前に reviewer がレビューを行います。
 
@@ -147,12 +147,12 @@ review: required
 
 ## 第4章: 発信軸 — writerが書いて3サイトに投稿
 
-記事の発信は writer エージェントが担当します。resarcher が調査・素材収集を行い、`logs/` に引き継ぎファイルを置く。writer がそれを読んで記事を書く。
+記事の発信は writer エージェントが担当します。researcher が調査・素材収集を行い、`logs/` に引き継ぎファイルを置く。writer がそれを読んで記事を書く。
 
 ```yaml
 # 引き継ぎファイルの例
 ---
-from: resarcher
+from: researcher
 to: writer
 status: ready
 ---
@@ -171,12 +171,13 @@ Zenn への投稿は `npx zenn` でプレビューを確認してから行いま
 
 ```bash
 # クロスポストの実行（1コマンドで3サイトに展開）
-bash crosspost.sh claude-code-personal-os-automation
+# ※ crosspost.sh は現在非公開のスクリプトです
+bash scripts/crosspost.sh claude-code-personal-os-automation
 ```
 
 `crosspost.sh` は sed/awk で Zenn frontmatter から記事情報を取得し、jq を使って各サービスの API レスポンスを処理する仕組みです。Node.js 依存を排除し、環境を選ばないよう設計されています（devops が継続的に改善）。
 
-このフローで、GTD をテーマにした記事シリーズを量産しました。resarcher がトピックを調査 → writer が執筆 → 3サイトに自動投稿。**ボトルネックが「書く時間」から「何を書くかの判断」に変わった**のが、このフローの最大の成果です。
+このフローで、GTD をテーマにした記事シリーズを量産しました。researcher がトピックを調査 → writer が執筆 → 3サイトに自動投稿。**ボトルネックが「書く時間」から「何を書くかの判断」に変わった**のが、このフローの最大の成果です。
 
 writer エージェントの定義を見ると、ツール制限の設計思想が分かります。
 
@@ -190,7 +191,7 @@ model: sonnet
 ---
 ```
 
-`Edit` ツールを与えているのは、既存記事の修正も担当するため。逆に devops には `WebSearch` を与えていません。インフラ整備に検索は不要だからです。**使えるツールを絞ることで、エージェントが余計なことをするリスクが減る** — これは地味ですが重要な設計です。
+`Edit` ツールを与えているのは、既存記事の修正も担当するため。逆に devops には `WebSearch` を今のところ与えていません。**使えるツールを絞ることで、エージェントが余計なことをするリスクが減る** — これは地味ですが重要な設計です。
 
 > **補足**: 前作「AIチームを組織した」の時点では writer に `Edit` を与えていませんでした。当初は新規執筆のみを想定していましたが、レビュー対応や記事修正を繰り返すなかで必要性が明らかになり、運用を経て追加しました。ツール定義は「最初から完璧に決めない、使いながら育てる」がちょうどいいと感じています。
 
@@ -244,7 +245,7 @@ CLOSED_JSON=$(gh issue list --repo <あなたのリポジトリ> \
 
 **1. 方向性の決定**
 
-「次に何を作るか」「どのテーマを深掘りするか」は人間が決めます。resarcher がいくら優秀な調査レポートを出しても、「それをやる価値があるか」の判断は人間にしかできません。todo スキルの改善ロードマップ、記事の方針、健康管理目標の設定 — これらは全て CEO（人間）が決めています。
+「次に何を作るか」「どのテーマを深掘りするか」は人間が決めます。researcher がいくら優秀な調査レポートを出しても、「それをやる価値があるか」の判断は人間にしかできません。todo スキルの改善ロードマップ、記事の方針、健康管理目標の設定 — これらは全て CEO（人間）が決めています。
 
 **2. 品質の最終判断**
 
@@ -296,21 +297,21 @@ GitHub Issues の状態管理・ラベル整理・エージェントへの振り
 # logs/YYYY-MM-DD_handoff_{トピック}.md の冒頭
 ---
 from: secretary
-to: resarcher
+to: researcher
 status: ready
 ---
 ```
 
 「情報がどこに行くべきか」を整理する仕組みが先にあると、後からエージェントを増やしたときに引き継ぎが自然に機能します。secretary がいることで CEO の判断コストが下がり、次のステップへ移行しやすくなります。
 
-### Step 3: resarcher と writer をセットで追加して発信する
+### Step 3: researcher と writer をセットで追加して発信する
 
-secretary による情報整理が回り始めたら、resarcher と writer をセットで追加します。調査 → 引き継ぎ → 執筆のフローは、`logs/` プロトコルが整っている状態ではじめてスムーズに動きます。
+secretary による情報整理が回り始めたら、researcher と writer をセットで追加します。調査 → 引き継ぎ → 執筆のフローは、`logs/` プロトコルが整っている状態ではじめてスムーズに動きます。
 
 ```markdown
-# .claude/agents/resarcher.md
+# .claude/agents/researcher.md
 ---
-name: resarcher
+name: researcher
 description: 調査・分析を行うリサーチエージェント
 tools: Read, Grep, Glob, WebSearch, WebFetch, Write, Edit, Bash
 model: sonnet
@@ -329,7 +330,7 @@ model: sonnet
 ---
 ```
 
-resarcher → writer の引き継ぎは `logs/` ファイルの `to: writer` フィールドだけで制御できます。secretary が振り分けの判断を担うので、CEO が毎回ルーティングを考える必要もなくなります。
+researcher → writer の引き継ぎは `logs/` ファイルの `to: writer` フィールドだけで制御できます。secretary が振り分けの判断を担うので、CEO が毎回ルーティングを考える必要もなくなります。
 
 健康管理軸（Step 4）は、タスク管理が完全に安定してから追加するのをおすすめします。GTD の運動タスクと health ログの連携は、Issues 管理が軌道に乗っていないと機能しません。
 
@@ -341,9 +342,9 @@ resarcher → writer の引き継ぎは `logs/` ファイルの `to: writer` フ
 
 調査・執筆・クロスポスト・健康ログ集計はエージェントが担う。人間が集中するのは「何を調べるか」「何を書くか」「公開していいか」の3点だけ。
 
-残っている課題もあります。コストの可視化（今日いくら使ったかをダッシュボードで見たい）、エージェント間の直接通信（resarcher → writer を CEO 経由なしに繋ぎたい）、人間の離席中も組織を回す仕組み。
+残っている課題もあります。コストの可視化（今日いくら使ったかをダッシュボードで見たい）、エージェント間の直接通信（researcher → writer を CEO 経由なしに繋ぎたい）、人間の離席中も組織を回す仕組み。
 
-でも、最小構成から始めて少しずつ育てれば十分です。最初から完成形を目指す必要はない。**まず `/todo` から、次に secretary で情報整理の仕組みを作り、そのあと resarcher と writer をセットで足す** — それが一番うまくいくやり方でした。
+でも、最小構成から始めて少しずつ育てれば十分です。最初から完成形を目指す必要はない。**まず `/todo` から、次に secretary で情報整理の仕組みを作り、そのあと researcher と writer をセットで足す** — それが一番うまくいくやり方でした。
 
 ---
 
