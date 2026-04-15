@@ -22,9 +22,9 @@ V2で採った設計はシンプルだ。
 
 ```
 V2の構成:
-  todo.md          176行  ← Claudeへの指示のみ
-  todo-engine.js            ← Node.jsエンジン（コードのみ）
-  todo.sh            33行  ← シェルラッパー（接続のみ）
+  todo.md            ← Claudeへの指示のみ
+  todo-engine.js     ← Node.jsエンジン（コードのみ）
+  todo.sh            ← シェルラッパー（接続のみ）
 ```
 
 `todo.md` の行数は176行（ローカルデプロイ版・実測）。`todo.sh` は33行（実測・空行含む全行）。`todo-engine.js` のサイズは114,026バイト（実測）。
