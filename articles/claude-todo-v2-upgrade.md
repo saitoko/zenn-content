@@ -23,7 +23,7 @@ V2で採った設計はシンプルだ。
 ```
 V2の構成:
   todo.md          176行  ← Claudeへの指示のみ
-  todo-engine.js   ????行  ← Node.jsエンジン（コードのみ）
+  todo-engine.js            ← Node.jsエンジン（コードのみ）
   todo.sh            33行  ← シェルラッパー（接続のみ）
 ```
 
