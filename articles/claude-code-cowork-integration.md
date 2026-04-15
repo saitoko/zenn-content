@@ -48,7 +48,7 @@ CoworkのBash環境からプライベートリポジトリにアクセスする�
 
 **この方法の限界**: CoworkのサンドボックスはWindows環境変数を継承しない。`GITHUB_TOKEN` をCoworkに渡す方法は環境変数経由では機能しない。
 
-### 解決: `request_cowork_directory` によるローカルマウント
+### 解決: `request_cowork_directory` によるローカルマウント（筆者がUI上で確認した操作名）
 
 試行錯誤の末にたどり着いた正解はシンプルだった。`request_cowork_directory` を使い、ローカルのリポジトリフォルダをCoworkに直接マウントする。これだけでトークン設定もChrome経由も不要になった。
 
@@ -94,7 +94,7 @@ ops/          — 運用ドキュメント
 
 ### パターン2: MCPを両環境に同一設定してツールを共有
 
-Claude Codeは `.mcp.json` でMCPサーバーを設定する。Cowork側はCoworkの設定画面のMCPタブから同じサーバーを追加する。同じPAT（Personal Access Token）を使い、同じMCPサーバー（GitHub MCP、Slack MCP など）を両環境に登録することで、ツールセットを揃えられる。
+Claude Codeは `.mcp.json` でMCPサーバーを設定する。Cowork側はCoworkの設定画面のMCPタブから同じサーバーを追加する（2026年4月時点のUI）。同じPAT（Personal Access Token）を使い、同じMCPサーバー（GitHub MCP、Slack MCP など）を両環境に登録することで、ツールセットを揃えられる。
 
 ```json
 // .mcp.json（Code側、ファイルパス: プロジェクトルート/.mcp.json）
@@ -113,7 +113,7 @@ Claude Codeは `.mcp.json` でMCPサーバーを設定する。Cowork側はCowor
 
 Cowork側は設定画面のMCPタブを開き、同じサーバー名・同じPATで追加する。これにより、Code側でGitHub Issueを操作するスキルと同等の操作がCowork側でも可能になる。
 
-**注意点**: CoworkはLinuxサンドボックスなので、Windows用バイナリ（`.exe`）を参照するMCPサーバーは動かない。クロスプラットフォーム対応のサーバー（`npx` 経由のNode.jsベース）を選ぶこと。
+**注意点**: 前述の通り、CoworkのサンドボックスはWindowsバイナリを実行できない。`npx` 経由のNode.jsベースなど、クロスプラットフォーム対応のサーバーを選ぶこと。
 
 ### パターン3: GitHub Issueをハブにしたタスク透過運用
 

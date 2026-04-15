@@ -45,7 +45,7 @@ content/
 
 問題の根本は、ルールの粒度が粗すぎたことです。
 
-各エージェントの定義（`.claude/agents/*.md`）には「成果物は `logs/` に保存」とだけ書いていました。resarcher が調査レポートを書いても `logs/`、reviewer がレビュー結果を書いても `logs/`、writer がドラフトを書いても `logs/`。全員が同じ場所に書き込む。
+各エージェントの定義（`.claude/agents/*.md`）には「成果物は `logs/` に保存」とだけ書いていました。researcher が調査レポートを書いても `logs/`、reviewer がレビュー結果を書いても `logs/`、writer がドラフトを書いても `logs/`。全員が同じ場所に書き込む。
 
 人間の組織で言えば、全部署が同じ共有フォルダに成果物を放り込んでいる状態です。ファイルが増えるにつれて3つの問題が顕在化しました。
 
@@ -69,9 +69,9 @@ devops が返してきた初案は、4ディレクトリ体制でした。
 | ディレクトリ | 目的 | 主な書き手 |
 |---|---|---|
 | `logs/` | エージェント間通信（handoff, session のみ） | 全エージェント |
-| `content/reports/research/` | 調査レポート・設計書 | resarcher, devops |
+| `content/reports/research/` | 調査レポート・設計書 | researcher, devops |
 | `content/reviews/` | レビュー結果 | reviewer |
-| `content/drafts/` | 記事ドラフト・ネタ帳 | writer, resarcher |
+| `content/drafts/` | 記事ドラフト・ネタ帳 | writer, researcher |
 
 加えて、ファイル命名規則として略語プレフィックスを提案してきました。`ho_`（handoff）、`ss_`（session）、`rr_`（research report）のような形です。
 
@@ -102,7 +102,7 @@ devops が `ho_`, `ss_` を提案したのは、「将来ディレクトリ名�
 | ディレクトリ | 書き手 | 読み手 | 保持期間 |
 |---|---|---|---|
 | `logs/` | 全エージェント | 次のエージェント | 引き継ぎ完了後アーカイブ可 |
-| `content/reports/research/` | resarcher, devops | writer, CEO | 永続保持（調査資産） |
+| `content/reports/research/` | researcher, devops | writer, CEO | 永続保持（調査資産） |
 | `content/reviews/` | reviewer | writer | 記事公開後に削除可 |
 | `content/drafts/` | writer | reviewer, CEO | zenn-content push後に削除可 |
 
@@ -121,7 +121,7 @@ devops が `ho_`, `ss_` を提案したのは、「将来ディレクトリ名�
 この設計を機能させる鍵は、各エージェントの定義ファイル（`.claude/agents/*.md`）に出力先を明示することです。1行書くだけで、エージェントはそのディレクトリに成果物を書き込むようになります。
 
 ```markdown
-# resarcher エージェント（抜粋）
+# researcher エージェント（抜粋）
 ## 出力先
 - 調査レポート・設計書: `content/reports/research/`
 - ファイル名: `YYYY-MM-DD_{トピック}.md`
@@ -142,8 +142,8 @@ devops が `ho_`, `ss_` を提案したのは、「将来ディレクトリ名�
 
 ファイル移動以外に、同時に更新したものがあります。
 
-- **エージェント定義** 4件（`.claude/agents/` の resarcher, reviewer, secretary, writer）の出力先パスを更新（devops は出力先が `logs/` のまま変更不要のため対象外）
-- **各エージェントの CLAUDE.md** 4件（resarcher, reviewer, secretary, writer）の参照パスを更新
+- **エージェント定義** 4件（`.claude/agents/` の researcher, reviewer, secretary, writer）の出力先パスを更新（devops は出力先が `logs/` のまま変更不要のため対象外）
+- **各エージェントの CLAUDE.md** 4件（researcher, reviewer, secretary, writer）の参照パスを更新
 - **weekly.md**: アーカイブタスクを `logs/` のみ → `logs/`, `content/reviews/`, `content/drafts/` の3ディレクトリに拡張
 - **README** 4件: `logs/`（更新）+ `content/reports/research/`, `content/reviews/`, `content/drafts/`（新規）
 - **`.gitignore`**: `**/worktrees/` を追加（worktree残骸の混入防止）
@@ -184,7 +184,7 @@ git mv logs/2026-04-08_review_article-automation.md \
 
 今回の作業を通じて改めて気づいたのは、「エージェントの出力先をどこにするか」という問いは、「そのエージェントの責務は何か」という問いと同値だということです。
 
-ディレクトリが責務を体現する。`content/reviews/` に書けるのは reviewer だけ、`content/reports/research/` に書けるのは resarcher と devops だけ——このルールを設ければ、ファイルを開かなくてもディレクトリ名から「誰が書いたか」「何の目的で書いたか」が分かります。
+ディレクトリが責務を体現する。`content/reviews/` に書けるのは reviewer だけ、`content/reports/research/` に書けるのは researcher と devops だけ——このルールを設ければ、ファイルを開かなくてもディレクトリ名から「誰が書いたか」「何の目的で書いたか」が分かります。
 
 人間のソフトウェア開発では、パッケージ構成やモジュール分割が「設計の見える化」として機能します。マルチエージェント組織でも同じことが起きます。ディレクトリ構成はエージェントの責務分担を物理的に表現したものです。
 

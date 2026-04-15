@@ -19,7 +19,7 @@ published: true
 ```
 CEO ─── オーケストレーション（人間が直接対話）
 ├── devops ──── 開発基盤・インフラメンテナンス
-├── resarcher ── 調査・分析・レビュー（品質管理）
+├── researcher ── 調査・分析・レビュー（品質管理）
 ├── secretary ── 情報整理・GitHub Issue管理
 ├── writer ───── 記事執筆・Zenn/Qiita/はてな投稿
 ├── todo-dev ─── /todo スキル開発
@@ -69,7 +69,7 @@ CEO ─── オーケストレーション（人間が直接対話）
 
 詳細は `.claude/rules/agent-roles.md` を参照。サブエージェント定義は `.claude/agents/` に配置。
 
-CEO ─ devops / resarcher / secretary / writer / todo-dev / health-dev
+CEO ─ devops / researcher / secretary / writer / todo-dev / health-dev
 
 ## パス記述方針
 
@@ -81,7 +81,7 @@ CEO ─ devops / resarcher / secretary / writer / todo-dev / health-dev
 
 **ポイントは「詳細は別ファイルを参照」という書き方**。エージェント組織の詳細は `.claude/rules/agent-roles.md` に、パス方針は `.claude/rules/path-policy.md` に分離しました。ルート CLAUDE.md は「全エージェントが毎回読むコア」なので、短ければ短いほどいい。
 
-各エージェントのワーキングディレクトリにも個別の CLAUDE.md を置いて「性格付け」しています。たとえば resarcher の CLAUDE.md はこうです（抜粋）。
+各エージェントのワーキングディレクトリにも個別の CLAUDE.md を置いて「性格付け」しています。たとえば researcher の CLAUDE.md はこうです（抜粋）。
 
 ```markdown
 # CLAUDE.md — Resarcher
@@ -111,9 +111,9 @@ CEO ─ devops / resarcher / secretary / writer / todo-dev / health-dev
 Claude Code の公式機能で、エージェントごとにツール制限とモデルを指定できます。実際のファイルはこうなっています。
 
 ```markdown
-# .claude/agents/resarcher.md
+# .claude/agents/researcher.md
 ---
-name: resarcher
+name: researcher
 description: 調査・分析・レビューを行うリサーチエージェント
 tools: Read, Grep, Glob, WebSearch, WebFetch, Write, Bash
 model: sonnet
@@ -164,7 +164,7 @@ description: スクリプト・指示書でのパス記述方針
 ```
 .claude/
 ├── agents/
-│   ├── resarcher.md    # 調査・レビュー
+│   ├── researcher.md    # 調査・レビュー
 │   ├── writer.md       # 記事執筆
 │   ├── secretary.md    # Issue管理
 │   └── devops.md       # インフラ
@@ -202,7 +202,7 @@ logs/YYYY-MM-DD_{種別}_{トピック}.md
 
 ```yaml
 ---
-from: resarcher
+from: researcher
 to: CEO
 status: ready
 review: skip
@@ -225,7 +225,7 @@ grep -rl "status: ready" logs/
 
 実際に、DevOps エージェントが作成したCLIツールのインストール指示書を CEO がレビューして差し戻しました。配置先パスが既存スクリプトと不一致、アセット名が不正確、エージェント用途に不要なツールの混入――「動くけど正しくない」を事前に潰すのが品質ゲートの役割です。
 
-この差し戻しでは `review: required` フィールドが活きました。インフラ系の指示書にはレビュー必須を設定しておくことで、resarcher が実行前にファクトチェックを行います。記事執筆のような定型業務は `review: skip` で直接実行。**全件レビューではなくリスクベースで品質ゲートを制御する**仕組みです。
+この差し戻しでは `review: required` フィールドが活きました。インフラ系の指示書にはレビュー必須を設定しておくことで、researcher が実行前にファクトチェックを行います。記事執筆のような定型業務は `review: skip` で直接実行。**全件レビューではなくリスクベースで品質ゲートを制御する**仕組みです。
 
 差し戻しの具体的なやりとり（指摘6点の詳細）は、[続編の体験記事](https://zenn.dev/tottoko_hamu/articles/claude-code-multi-agent-day)で紹介しています。
 

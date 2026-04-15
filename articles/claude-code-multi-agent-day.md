@@ -17,7 +17,7 @@ published: true
 ```
 CEO ─── オーケストレーション（人間が直接対話）
 ├── devops ──── 開発基盤・インフラメンテナンス
-├── resarcher ── 調査・分析・レビュー（品質管理）
+├── researcher ── 調査・分析・レビュー（品質管理）
 ├── secretary ── 情報整理・GitHub Issue管理
 ├── writer ───── 記事執筆・Zenn/Qiita/はてな投稿
 ├── todo-dev ─── /todo スキル開発
@@ -63,25 +63,25 @@ Inbox が空になると、Claude が今日の Next Actions から「最小ア�
 
 ## 午前：リサーチフェーズ
 
-### 9:00 — resarcher へ調査指示
+### 9:00 — researcher へ調査指示
 
-朝のタスク整理で「マルチエージェント環境の指示書管理を改善したい」という課題が浮かび上がりました。CEO から resarcher に調査を依頼します。
+朝のタスク整理で「マルチエージェント環境の指示書管理を改善したい」という課題が浮かび上がりました。CEO から researcher に調査を依頼します。
 
 テーマは「Claude Code マルチエージェント環境における指示書管理のベストプラクティス」。CLAUDE.md の階層設計、`.claude/agents/` の活用法、`.claude/rules/` によるモジュール化など、公式ドキュメントと実践知を横断的に調べてほしいという内容です。
 
 ### 10:30 — レポート受領
 
-resarcher がレポートを `logs/` に保存しました。ファイル名は `2026-04-07_report_multi-agent-instruction-management.md`。冒頭の YAML frontmatter はこうなっています。
+researcher がレポートを `logs/` に保存しました。ファイル名は `2026-04-07_report_multi-agent-instruction-management.md`。冒頭の YAML frontmatter はこうなっています。
 
 ```yaml
 ---
-from: resarcher
+from: researcher
 to: CEO
 status: ready
 ---
 ```
 
-`status: ready` は「CEO が読める状態です」という意味です。ステータスは `draft`（作業中）→ `ready`（利用可能）→ `in_progress`（着手済み）→ `done`（完了）の4段階。インフラ系の指示書には `review: required` を付けて、実行前に resarcher のレビューを必須にすることもできます。このシンプルなプロトコルで、エージェント間の非同期通信が成立します。
+`status: ready` は「CEO が読める状態です」という意味です。ステータスは `draft`（作業中）→ `ready`（利用可能）→ `in_progress`（着手済み）→ `done`（完了）の4段階。インフラ系の指示書には `review: required` を付けて、実行前に researcher のレビューを必須にすることもできます。このシンプルなプロトコルで、エージェント間の非同期通信が成立します。
 
 ### レポートの中身（抜粋）
 
@@ -124,9 +124,9 @@ status: ready
 4つのエージェント定義を新規作成しました。実際のファイルの1つを紹介します。
 
 ```markdown
-# .claude/agents/resarcher.md
+# .claude/agents/researcher.md
 ---
-name: resarcher
+name: researcher
 description: 調査・分析・レビューを行うリサーチエージェント
 tools: Read, Grep, Glob, WebSearch, WebFetch, Write, Bash
 model: sonnet
@@ -158,7 +158,7 @@ Before（50行）の CLAUDE.md にはエージェント組織図の詳細やパ�
 
 詳細は `.claude/rules/agent-roles.md` を参照。
 
-CEO ─ devops / resarcher / secretary / writer / todo-dev / health-dev
+CEO ─ devops / researcher / secretary / writer / todo-dev / health-dev
 
 ## パス記述方針
 
@@ -186,7 +186,7 @@ commands はポインタとして機能し、詳細手順は既存の `agents/` 
 ```
 .claude/
 ├── agents/
-│   ├── resarcher.md    ← NEW
+│   ├── researcher.md    ← NEW
 │   ├── writer.md       ← NEW
 │   ├── secretary.md    ← NEW
 │   └── devops.md       ← NEW
@@ -242,7 +242,7 @@ blogsync のパスが違っていても、テスト環境では偶然動くか�
 ```yaml
 ---
 from: CEO
-to: resarcher
+to: researcher
 status: done
 ---
 ```
@@ -251,11 +251,11 @@ status: done
 
 ## 夜：引き継ぎフェーズ
 
-### 19:00 — resarcher が記事ネタを収集
+### 19:00 — researcher が記事ネタを収集
 
-1日の作業が一段落したところで、resarcher に「今日の成果物を記事にできないか調べて」と依頼しました。
+1日の作業が一段落したところで、researcher に「今日の成果物を記事にできないか調べて」と依頼しました。
 
-resarcher は2つのことをやりました。
+researcher は2つのことをやりました。
 
 1. **競合調査** — Zenn / Qiita / 英語圏のマルチエージェント記事を調べ、空白地帯を分析
 2. **ネタ帳作成** — 5本の記事候補を整理し、推奨優先順位をつけた
@@ -273,11 +273,11 @@ resarcher は2つのことをやりました。
 
 ### 20:00 — writer へ引き継ぎ
 
-resarcher が記事ネタと素材をまとめ、writer エージェントに引き継ぎました。引き継ぎファイルの中身はこうです。
+researcher が記事ネタと素材をまとめ、writer エージェントに引き継ぎました。引き継ぎファイルの中身はこうです。
 
 ```yaml
 ---
-from: resarcher
+from: researcher
 to: writer
 status: ready
 ---
@@ -289,11 +289,11 @@ status: ready
 
 ```
 08:00  secretary  ─ GTD整理（Inbox 4件→0件、プロジェクト構造化）
-09:00  resarcher  ─ 指示書管理のベストプラクティス調査
+09:00  researcher  ─ 指示書管理のベストプラクティス調査
 10:30  CEO        ─ レポート精査、高優先度3項目を選定
 13:00  CEO        ─ インフラ整備（+448行、13ファイル）
 16:00  CEO        ─ 指示書レビュー→差し戻し（必須修正3点+要検討3点）
-19:00  resarcher  ─ 記事ネタ収集・競合調査
+19:00  researcher  ─ 記事ネタ収集・競合調査
 20:00  writer     ─ 記事執筆開始
 ```
 
@@ -324,11 +324,11 @@ install-cli-tools の差し戻し事例が象徴的です。「動くけど正�
 
 **1. 人間のボトルネック問題**
 
-全てのレビューを CEO（人間）が行うので、人間が離席すると組織が止まる。resarcher にレビュー権限を委譲して、一次レビューは自動化できるかもしれません。
+全てのレビューを CEO（人間）が行うので、人間が離席すると組織が止まる。researcher にレビュー権限を委譲して、一次レビューは自動化できるかもしれません。
 
 **2. エージェント間の直接通信**
 
-現在は CEO を経由して全てのやりとりが行われています。「resarcher → writer」の引き継ぎも CEO が中継している。信頼できるフローは直接通信にして、CEO の介入ポイントを減らしたい。
+現在は CEO を経由して全てのやりとりが行われています。「researcher → writer」の引き継ぎも CEO が中継している。信頼できるフローは直接通信にして、CEO の介入ポイントを減らしたい。
 
 **3. コスト可視化**
 
@@ -348,6 +348,6 @@ install-cli-tools の差し戻し事例が象徴的です。「動くけど正�
 2. **品質ゲートが命**。レビュー→差し戻し→修正のサイクルがないと、「動くけど正しくない」成果物が量産される
 3. **人間の仕事は判断**。調査・実装・記事化はエージェントに任せて、何をやるか・何をやらないか・品質は十分かを判断するのが CEO の役割
 
-この記事自体が、マルチエージェント組織の成果物です。resarcher が調査し、CEO が判断し、writer が書いた。そしてこの後、resarcher がレビューします。
+この記事自体が、マルチエージェント組織の成果物です。researcher が調査し、CEO が判断し、writer が書いた。そしてこの後、researcher がレビューします。
 
 組織は最初から完成形を目指す必要はありません。まずは1体から。**必要に応じて育てるのが、一番うまくいくやり方**でした。

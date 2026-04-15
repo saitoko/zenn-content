@@ -2,7 +2,7 @@
 title: "Claude Code スケジュール実行で踏んだ6つの罠と対処法（Remote Trigger実運用録）"
 emoji: "🕳️"
 type: "tech"
-topics: ["claudecode", "automation", "remotetrigger", "トラブルシューティング"]
+topics: ["claudecode", "automation", "remotetrigger", "troubleshooting"]
 published: false
 ---
 <!-- from: writer | to: CEO | status: draft | date: 2026-04-14 -->
@@ -17,7 +17,7 @@ published: false
 
 ある朝、その Daily Dispatcher が動いていないことに気づいた。前日まで正常だったのに、ログが残っていない。
 
-`claude.ai/code/scheduled` を開いてトリガーの設定画面を見ると、プロンプトの `events`（トリガー実行時にエージェントに渡すプロンプトを定義するフィールド）がまるごと空になっていた。
+`claude.ai/code/scheduled`（2026年4月時点）を開いてトリガーの設定画面を見ると、プロンプトの `events`（トリガー実行時にエージェントに渡すプロンプトを定義するフィールド）がまるごと空になっていた。
 
 「何もしていないのに壊れた」——そのパターンを6件経験した。以下はその記録と対処法だ。
 
@@ -61,7 +61,7 @@ Remote Trigger API でトリガーを更新する際、`job_config` の一部だ
 
 初期ディレクトリがどちらになるかは**保証されていない**。偶然メインリポジトリで起動し続けていた状態が、ある日崩れた。1リポジトリのみの Hourly Dispatcher ではこの問題は発生しないため、比較対象がなくて原因特定に時間がかかった。
 
-この問題はGitHub Issuesに報告済みだ（[#47604](https://github.com/anthropics/claude-code/issues/47604): "Remote Trigger: initial working directory is non-deterministic with multiple source repositories"）。現在もオープン。
+この問題はGitHub Issuesに報告済みだ（[#47604](https://github.com/anthropics/claude-code/issues/47604): "Remote Trigger: initial working directory is non-deterministic with multiple source repositories"）。2026年4月時点でオープン。
 
 ### 対処法
 
@@ -153,11 +153,11 @@ Daily Dispatcher の `outcomes` に `branches: ["master"]` と設定していた
 
 **正攻法: Cloud Environment の環境変数を使う**
 
-`claude.ai/code/scheduled` の環境設定（Environment variables）に `.env` 形式でトークンを記述する。スクリプト側に変更は不要で、既存のフォールバックロジックで自動的に環境変数を優先して読む。
+`claude.ai/code/scheduled`（2026年4月時点）の環境設定（Environment variables）に `.env` 形式でトークンを記述する。スクリプト側に変更は不要で、既存のフォールバックロジックで自動的に環境変数を優先して読む。
 
 現時点でリモートにシークレットを渡す手段はこの環境変数のみだ。設定値は平文で保存されることに留意しておきたい。Anthropicへの提言でも触れるが、暗号化されたSecrets Storeの提供が待ち望まれる。
 
-> [補足] MCPコネクタ経由でシークレットを渡す方法も検討したが、スケジュール実行時にMCPコネクタが使えないバグが複数報告されている（[#35899](https://github.com/anthropics/claude-code/issues/35899) ほか）。いずれも未解決で、当面この方式は使えない。
+> [補足] MCPコネクタ経由でシークレットを渡す方法も検討したが、スケジュール実行時にMCPコネクタが使えないバグが複数報告されている（[#35899](https://github.com/anthropics/claude-code/issues/35899) ほか）。#35899 は2026年4月時点でクローズ済みだが、同様の現象が別のIssueでも報告されているため引き続き注意が必要だ。
 
 ---
 
@@ -230,8 +230,8 @@ Remote Trigger は可能性が大きい機能だ。プロダクションレベ�
 
 **設定・仕様関連**
 
-- **複数リポジトリ指定時の初期ディレクトリの明示的な仕様化**（[#47604](https://github.com/anthropics/claude-code/issues/47604)）: 決定的にするか、少なくとも「どのリポジトリになるか保証しない」と明記してほしい
-- **MCPコネクタのスケジュール実行時バグの修正**（[#35899](https://github.com/anthropics/claude-code/issues/35899)）: スケジュール実行でMCPツールが使えないと、できることが大きく制限される
+- **複数リポジトリ指定時の初期ディレクトリの明示的な仕様化**（[#47604](https://github.com/anthropics/claude-code/issues/47604)、2026年4月時点オープン）: 決定的にするか、少なくとも「どのリポジトリになるか保証しない」と明記してほしい
+- **MCPコネクタのスケジュール実行時バグの修正**（[#35899](https://github.com/anthropics/claude-code/issues/35899)、2026年4月時点クローズ済み）: スケジュール実行でMCPツールが使えないと、できることが大きく制限される
 - **Secrets Store（暗号化されたシークレット管理）の提供**: 現状の環境変数による平文管理に代わる、セキュアなシークレット受け渡し機構がほしい
 
 **ドキュメント関連**
