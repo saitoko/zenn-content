@@ -61,7 +61,7 @@ Remote Trigger API でトリガーを更新する際、`job_config` の一部だ
 
 初期ディレクトリがどちらになるかは**保証されていない**。偶然メインリポジトリで起動し続けていた状態が、ある日崩れた。1リポジトリのみの Hourly Dispatcher ではこの問題は発生しないため、比較対象がなくて原因特定に時間がかかった。
 
-この問題はGitHub Issuesに報告済みだ（[#47604](https://github.com/anthropics/claude-code/issues/47604): "Remote Trigger: initial working directory is non-deterministic with multiple source repositories"）。2026年4月時点でオープン。
+この問題はGitHub Issuesに報告済みだ（[#47604](https://github.com/anthropics/claude-code/issues/47604): "Remote Trigger: initial working directory is non-deterministic with multiple source repositories"）。2026年4月時点でオープン。なお、このIssueを起票したのも筆者ではなくsecretaryエージェントだ。Anthropicのリポジトリへの報告は英語が必要だが、文面の作成・起票・ラベル付けまでAIが一通りやってくれる。人間がすることは「この内容で問題ないか」を事前に確認するだけだ。Claude Codeの不具合と思われる挙動を見つけたときは、英語の壁を気にせずAIに相談してみてほしい。問題が報告されなければAnthropicは認知できない。1件の報告が修正につながることがある。
 
 ### 対処法
 
