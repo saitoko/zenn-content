@@ -6,17 +6,25 @@ topics: ["claudecode", "cowork", "claude", "ai", "gtd"]
 published: false
 ---
 
+:::message alert
+CoworkおよびClaude Codeは機能追加・UI変更が頻繁に行われています。この記事の情報は**2026年4月18日時点**のものです。特にCoworkのUI手順は変更されやすいため、最新の公式情報と併せて確認してください。
+:::
+
 ## この記事で伝えること
 
-Claude Coworkは2026年4月9日にGA（一般提供）へ移行したAnthropicのブラウザベースAIエージェント環境だ（[Anthropic launches Claude Cowork in General Availability](https://www.testingcatalog.com/anthropic-launches-claude-cowork-in-general-availability/)）。重要な制約として、CoworkはLinuxサンドボックス上で動いており、Windows側の環境変数やファイルシステムと完全に分離されている。これを最初に知らないと、連携の試みが全て外れる。
+CoworkはデスクトップアプリからClaudeが直接ファイル操作・ブラウザ自動化を行える環境で、Claude Codeとは別の仕組みで動く。
 
-問題は「同じプロジェクトでClaude CodeとCoworkを同時に使う」方法が公式ドキュメントの目立つ場所に書かれていないことだ。
+Claude Coworkは2026年4月9日にGA（一般提供）へ移行したAnthropicのデスクトップAIエージェント環境だ（[Anthropic launches Claude Cowork in General Availability](https://www.testingcatalog.com/anthropic-launches-claude-cowork-in-general-availability/)）。重要な制約として、CoworkはLinuxサンドボックス上で動いており、Windows側の環境変数やファイルシステムと完全に分離されている。これを最初に知らないと、連携の試みが全て外れる。
+
+問題は「同じプロジェクトでClaude CodeとCoworkを同時に使う」方法が公式ドキュメントの目立つ場所に書かれていないことだ。さらに、Coworkは2026年3月にUIが大きく変わっており、古い情報（セッション中にフォルダ追加ボタンでマウントできる）はすでに使えない。
 
 この記事では、筆者が2026-04-10にCoworkを導入して実際に踏んだ3つの失敗と、それを経てたどり着いた解決策、そして現在運用中の3つの連携パターンを書く。失敗の再現手順から設計の背景まで、試した順番に記録する。
 
 ---
 
 ## 1. なぜ連携が必要か — 同じプロジェクトを2つのAIが操作する問題
+
+マルチエージェント構成でなくても、Claude Codeで作業中のプロジェクトにCoworkを組み合わせると同じ問題が発生する。
 
 Claude Codeで構築したマルチエージェント構成（researcher・writer・secretary など）を持つプロジェクトに、CoworkのAIエージェントを追加で参加させようとすると、すぐに問題が出る。
 
@@ -48,21 +56,42 @@ CoworkのBash環境からプライベートリポジトリにアクセスする�
 
 **この方法の限界**: CoworkのサンドボックスはWindows環境変数を継承しない。`GITHUB_TOKEN` をCoworkに渡す方法は環境変数経由では機能しない。
 
-### 解決: `request_cowork_directory` によるローカルマウント（筆者がUI上で確認した操作名）
+### 解決: プロジェクト作成時にフォルダを登録する（現在の正しい手順）
 
-試行錯誤の末にたどり着いた正解はシンプルだった。`request_cowork_directory` を使い、ローカルのリポジトリフォルダをCoworkに直接マウントする。これだけでトークン設定もChrome経由も不要になった。
+試行錯誤の末にたどり着いた正解は、**プロジェクト作成フロー**でローカルフォルダを事前に登録することだ。
 
-**手順**:
+ただし、ここには重要な変遷がある。
 
-1. Coworkのチャット画面で「このフォルダにアクセスしたい」と伝えるか、チャット入力欄のフォルダ追加ボタンからローカルディレクトリへのアクセスをリクエストする
-2. OSのフォルダ選択ダイアログが開くので、マウントしたいリポジトリフォルダ（例: `C:\Users\yourname\Documents\my-project`）を選択する
-3. 許可すると、Coworkのファイルツールがそのフォルダ以下を直接読み書きできるようになる
+**過去の手順（現在は使えない）**: 以前はセッション中にチャット入力欄のフォルダ追加ボタン（`request_cowork_directory`）からマウントできた。しかしこのツールは2026年2月ごろ削除されており、セッション途中でのフォルダ追加は現在できない。復活予定もなく、[GitHub Issue #25797](https://github.com/anthropics/claude-code/issues/25797) が "not planned" でクローズされており、現時点で復活の予定は示されていない。
+
+**現在の正しい手順**: 2026年3月下旬にProjects機能が導入され、UIがセッションベースから「プロジェクト（永続ワークスペース）」ベースへ転換した。ローカルフォルダへのアクセスは、プロジェクト作成時に設定する。
+
+**フォルダマウントの具体的な手順（2026年4月時点）**:
+
+以下は新規作成（ゼロから）の場合の手順:
+
+1. Coworkの左サイドバーの「New project」をクリック
+2. プロジェクト名を入力して作成
+3. 「Context」セクションの「Add context」→「Local folder」を選択
+4. ファイルダイアログでリポジトリフォルダを選択（例: `C:\Users\yourname\Documents\my-project`）
+5. 「Add to project」で確定
+
+プロジェクト作成の起点は3つある:
+1. 新規作成（ゼロから）
+2. 既存クラウドプロジェクトからインポート
+3. 既存ローカルフォルダを接続
+
+各プロジェクトには以下を設定できる:
+- **指示**（トーン・ルール）
+- **コンテキスト**（ローカルフォルダ、チャットプロジェクト、URL）
+- **スケジュール済みタスク**
+- **メモリ**（セッション間での記憶）
+
+コンテキストの「ローカルフォルダ」でリポジトリフォルダ（例: `C:\Users\yourname\Documents\my-project`）を指定すると、そのプロジェクト内でCoworkのファイルツールがフォルダ以下を直接読み書きできるようになる。
+
+**Windowsでの注意点**: ホームディレクトリ（`C:\Users\<username>`）配下のフォルダのみマウント可能だ。Dドライブなど別ドライブのフォルダは拒否される（既知バグ、[GitHub Issue #29583](https://github.com/anthropics/claude-code/issues/29583)）。シンボリックリンクによる回避も機能しない。ホームディレクトリ外にプロジェクトを置いている場合は移動が必要になる。
 
 マウント後は `content/drafts/`、`logs/cowork/`、CLAUDE.md、`.mcp.json` など、リポジトリ内の全ファイルに直接アクセスできる。ファイルの作成・更新・削除がCoworkから直接行える。
-
-「最初からこれを知っていれば」という典型的な後知恵だが、この手順が公式ドキュメントの目立つ場所に書かれているわけではない。
-
-**時間短縮の実感**: Chrome経由での1ファイル反映では「ブラウザを開く→目当てのファイルを探す→内容をコピーする→Coworkに貼り付ける→確認する」という往復工程が毎回発生していた。ローカルマウント後はこの工程が丸ごと不要になる。定量的な計測はしていないが、ファイル件数が多いほど差は大きくなる。
 
 ---
 
@@ -74,7 +103,7 @@ CoworkのBash環境からプライベートリポジトリにアクセスする�
 
 リポジトリのルートに置いた `CLAUDE.md` は、Claude Codeが自動で読み込む。CoworkのAIも、マウントしたディレクトリ内の `CLAUDE.md` を参照できる。
 
-ただし、Claude CodeはCLAUDE.mdを起動時に自動で読むのに対し、**CoworkはセッションごとにAIへ手動で「CLAUDE.mdを読んで」と指示する必要がある**。この差は現時点では解消できていない。「Code側は自動、Cowork側は手動」と割り切って運用するか、毎回の指示をシステムプロンプトに組み込む方法を検討中だ。
+ただし、Claude CodeはCLAUDE.mdを起動時に自動で読むのに対し、**CoworkはセッションごとにAIへ手動で「CLAUDE.mdを読んで」と指示する必要がある**。この差は現時点では解消できていない。「Code側は自動、Cowork側は手動」と割り切って運用するか、毎回の指示をプロジェクトの「指示」欄に組み込む方法を検討中だ。
 
 CLAUDE.mdをGit管理することで、Code側で更新した内容を次のCoworkセッションで参照できる。両環境のAIがエージェントの役割定義・ルール・ディレクトリ構成を共有できる。
 
@@ -94,7 +123,7 @@ ops/          — 運用ドキュメント
 
 ### パターン2: MCPを両環境に同一設定してツールを共有
 
-Claude Codeは `.mcp.json` でMCPサーバーを設定する。Cowork側はCoworkの設定画面のMCPタブから同じサーバーを追加する（2026年4月時点のUI）。同じPAT（Personal Access Token）を使い、同じMCPサーバー（GitHub MCP、Slack MCP など）を両環境に登録することで、ツールセットを揃えられる。
+Claude Codeは `.mcp.json` でMCPサーバーを設定する。Cowork側はプロジェクトの設定画面のMCPタブから同じサーバーを追加する（2026年4月時点のUI）。同じPAT（Personal Access Token）を使い、同じMCPサーバー（GitHub MCP、Slack MCP など）を両環境に登録することで、ツールセットを揃えられる。
 
 ```json
 // .mcp.json（Code側、ファイルパス: プロジェクトルート/.mcp.json）
@@ -111,11 +140,13 @@ Claude Codeは `.mcp.json` でMCPサーバーを設定する。Cowork側はCowor
 }
 ```
 
-Cowork側は設定画面のMCPタブを開き、同じサーバー名・同じPATで追加する。これにより、Code側でGitHub Issueを操作するスキルと同等の操作がCowork側でも可能になる。
+Cowork側はプロジェクトの設定画面（右上の歯車アイコン）→「MCP」タブを開き、「Add MCP server」から追加する。入力項目はサーバー名（例: `github`）・コマンド（例: `npx`）・引数（例: `-y @modelcontextprotocol/server-github`）・環境変数（`GITHUB_PERSONAL_ACCESS_TOKEN`）で、`.mcp.json` の内容と対応している。これにより、Code側でGitHub Issueを操作するスキルと同等の操作がCowork側でも可能になる。
 
 **注意点**: 前述の通り、CoworkのサンドボックスはWindowsバイナリを実行できない。`npx` 経由のNode.jsベースなど、クロスプラットフォーム対応のサーバーを選ぶこと。
 
 ### パターン3: GitHub Issueをハブにしたタスク透過運用
+
+なお、`gh` CLI（GitHub CLI）はCoworkのサンドボックスに標準インストールされていないため、Cowork側はMCPサーバー経由でGitHub APIを操作する。
 
 Code側とCowork側でタスク管理を分けると、どちらが何をやっているかが見えなくなる。これを避けるため、GitHub Issueを「Single Source of Truth」にした。
 
@@ -125,7 +156,7 @@ Code側とCowork側でタスク管理を分けると、どちらが何をやっ�
 
 この設計により、Code側でIssueを作ったものをCowork側で完了させる、あるいはその逆も、リポジトリを介して双方が把握できる状態になる。
 
-現在の運用では、Code側は専用の `/todo` スキル（Bash + Node.jsで構築）を使っており、Cowork側はGitHub MCPサーバーのAPI経由で同じIssueを操作している。Cowork側にも `.claude/commands/` にカスタムコマンドを置けば `/todo` と入力するだけで呼び出せるようになるが、現時点では未作成のため、AIへの自然言語指示で代用している。
+現在の運用では、Code側は専用の `/todo` スキル（Bash + Node.jsで構築）を使っており、Cowork側はGitHub MCPサーバーのAPI経由で同じIssueを操作している。Cowork側にも `.claude/commands/` にカスタムコマンドを置けば `/todo` と入力するだけで呼び出せるようになるが、現時点では未作成のため、AIへの自然言語指示で代用している。実際の指示例: 「ラベルinboxでGitHub Issueを作成して。タイトル: 〇〇、本文: 〇〇」「Issue #12をクローズして」のように伝えると、GitHub MCPサーバー経由で操作される。
 
 将来的に作成する場合のカスタムコマンドの構成例:
 
@@ -153,9 +184,11 @@ GitHub MCPサーバーの `create_issue` / `update_issue` を使う。
 
 正直に書く。
 
-**未解決: CoworkからのGit操作**
+**未解決: CoworkからのGit操作とファイル同期バグ**
 
-`request_cowork_directory` でファイルの読み書きはできる。しかしgit操作（`git add`、`git commit`、`git push`）はCoworkのBash環境から安定して動かない場面がある。現状はCoworkが書いたファイルをCode側でコミット・プッシュするという分業になっている。「Coworkが書いてCode側がGit管理する」という役割分担は想定外だったが、実用上は問題ない。
+プロジェクトにフォルダをマウントするとファイルの読み書きはできる。しかしgit操作（`git add`、`git commit`、`git push`）はCoworkのBash環境から安定して動かない場面がある。
+
+また、コミュニティで複数報告されている既知バグ（[GitHub Issue #30364](https://github.com/anthropics/claude-code/issues/30364)、重複クローズ済み）として、マウント後にホストへ同期されるのが最初の1ファイルのみで、以降の書き込みがホスト側に反映されないことがあるとされている。筆者は現時点でこの挙動を確認していないが、Coworkが書いたファイルをCode側でコミット・プッシュするという分業は、Git操作の安定性という別の理由もあわせて合理的な設計として採用している。
 
 **未解決: MCP設定の同期**
 
@@ -167,7 +200,7 @@ GitHub MCPサーバーの `create_issue` / `update_issue` を使う。
 
 **コスト面の注意**
 
-CoworkはClaude Proプランに含まれているが、使用量には上限がある。特にComputer Use（スクリーンショットベースの操作）は消費が大きい。今回紹介したファイル操作・MCP操作中心の使い方は比較的軽量だが、長時間のブラウザ自動化タスクを連続実行する場合は使用量に注意が必要だ。
+CoworkはClaude Proプランに含まれているが、使用量には上限がある（筆者環境では現時点で上限に達していない。正確な上限値はAnthropicのusageページで確認できる）。特にComputer Use（スクリーンショットベースの操作）は消費が大きい。今回紹介したファイル操作・MCP操作中心の使い方は比較的軽量だが、長時間のブラウザ自動化タスクを連続実行する場合は使用量に注意が必要だ。
 
 ---
 
@@ -175,10 +208,10 @@ CoworkはClaude Proプランに含まれているが、使用量には上限が�
 
 3つのポイントに絞る。
 
-1. **CoworkのファイルアクセスはChromeでも環境変数でもなく `request_cowork_directory`**: Linuxサンドボックスの制約を知らないと2つ目の失敗（環境変数が届かない）で詰まる。最初にローカルマウントを試すべき。
+1. **ローカルフォルダのマウントはプロジェクト作成時に設定する**: セッション中のフォルダ追加（`request_cowork_directory`）は2026年2月ごろ削除済みで復活予定なし。2026年3月下旬のProjects機能導入以降、マウントはプロジェクト作成フローで行う。Windowsではホームディレクトリ外のパスは拒否される（[GitHub Issue #29583](https://github.com/anthropics/claude-code/issues/29583)）点に注意。
 
 2. **ルールとタスクの共有はGit経由でできる**: CLAUDE.mdをGit管理することで両環境のAIが同じ文脈で動く。GitHub Issueをタスクのハブにすることで、どちらの環境からでも作業状態が見える。
 
-3. **CoworkとCodeは競合でなく役割分担**: Code側がGit・CLI・ファイルシステム操作を担い、Cowork側がMCP経由のAPI操作とブラウザ自動化を担う。重複させず棲み分けることで、両方の強みが生きる。
+3. **CoworkとCodeは競合でなく役割分担**: ファイル同期バグ（[Issue #30364](https://github.com/anthropics/claude-code/issues/30364)）の存在も踏まえ、Coworkが書いてCode側がGit管理するという分業が現実的だ。重複させず棲み分けることで、両方の強みが生きる。
 
-現在この構成で4日間運用しており（2026-04-10〜04-14時点）、大きなトラブルは出ていない。ただし導入からまだ日が浅いため、長期安定性については引き続き確認中だ。未解決課題（Git操作の安定性・MCP設定同期）が解消したら追記する予定。
+2026-04-18時点で8日間この構成で運用しており（2026-04-10導入）、ファイル読み書き・CLAUDE.md参照・MCP経由のGitHub操作は問題なく動いている。ただし前述のGit操作の安定性・ファイル同期バグ・MCP設定同期の3点は未解決のため、長期安定性については引き続き確認中だ。未解決課題が解消したら追記する予定。
