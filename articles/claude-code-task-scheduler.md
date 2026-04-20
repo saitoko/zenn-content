@@ -3,7 +3,7 @@ title: "Claude Codeのスケジュール枠は3つだけ——ディスパッチ
 emoji: "⏰"
 type: "tech"
 topics: ["claudecode", "automation", "scheduler", "claude"]
-published: false
+published: true
 ---
 <!-- from: writer | to: CEO | status: final-draft | date: 2026-04-13 | changes: レビュー指摘修正（必須2/推奨2/批判的5件対応）-->
 
