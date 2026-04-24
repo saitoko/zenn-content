@@ -1,5 +1,5 @@
 ---
-title: "Claude Code 今週のアップデート(v2.1.98〜v2.1.109) - /recap、/resume 改善、エラーメッセージ改善など"
+title: "Claude Code アップデート(v2.1.98〜v2.1.109) - /recap、/resume 改善、エラーメッセージ改善など"
 emoji: "📋"
 type: "tech"
 topics: ["claudecode", "ai", "cli"]
