@@ -3,7 +3,7 @@ title: "Claude Code アップデート(v2.1.98〜v2.1.109) - /recap、/resume �
 emoji: "📋"
 type: "tech"
 topics: ["claudecode", "ai", "cli"]
-published: false
+published: true
 ---
 
 v2.1.98 から v2.1.109 にかけて、地味だが痒いところに手が届く改善がいくつか入った。「試してみた」系は別記事に譲り、今回は変更点の紹介に徹する。
