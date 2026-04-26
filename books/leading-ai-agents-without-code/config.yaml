@@ -1,0 +1,14 @@
+title: "コードを書けない私が、AIに「チーム」を持たせるまで"
+summary: "SE歴26年、コードを一行も書かずにAIエージェント9体の編集部を立ち上げた10日間の実践記録。役割設計・組織育成・運用の現実まで、チームリーダーやPMがそのままAI活用に転換できる実録ガイド。"
+topics: ["ai", "llm", "claude", "agentai", "生産性向上"]
+published: false
+price: 1500
+chapters:
+  - prologue
+  - part01
+  - part02
+  - part03
+  - part04
+  - part05
+  - part06
+  - appendix
