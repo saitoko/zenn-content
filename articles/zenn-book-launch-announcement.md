@@ -1,8 +1,8 @@
 ---
 title: "コードを書けない私が、AIに「チーム」を持たせるまで — Zenn Booksで本を出しました"
-emoji: "📝"
-type: "tech"
-topics: ["claude-code","ai"]
+emoji: "📚"
+type: "idea"
+topics: ["claudecode","multiagent","ai"]
 published: true
 ---
 
