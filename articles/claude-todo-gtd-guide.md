@@ -3,7 +3,7 @@ title: "今度こそ！ Claude CodeでGTDを回す——/todo 完全ガイド"
 emoji: "📋"
 type: "tech"
 topics: ["claudecode","gtd","productivity","github"]
-published: true
+published: false
 ---
 GTDは知っている。5つのリスト、週次レビュー、next action——概念は理解できる。でも続かない。
 
