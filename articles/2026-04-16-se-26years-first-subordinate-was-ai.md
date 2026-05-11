@@ -3,7 +3,7 @@ title: "SE歴26年、初めての部下はAIだった"
 emoji: "📝"
 type: "tech"
 topics: ["ai","claude-code"]
-published: true
+published: false
 ---
 # SE歴26年、初めての部下はAIだった
 
