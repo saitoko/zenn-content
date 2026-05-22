@@ -247,3 +247,9 @@ Step 4: 一日のサマリー
 リポジトリはこちらです。フィードバックや改善提案は Issue でお待ちしています。
 
 https://github.com/saitoko/claude-todo-gtd
+
+---
+
+この記事の実践例を一冊にまとめました。
+
+[コードを書けない私がClaude Codeで「AIチーム」を作るまで（Zenn Books）](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)

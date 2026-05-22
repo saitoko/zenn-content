@@ -351,3 +351,9 @@ install-cli-tools の差し戻し事例が象徴的です。「動くけど正�
 この記事自体が、マルチエージェント組織の成果物です。researcher が調査し、CEO が判断し、writer が書いた。そしてこの後、researcher がレビューします。
 
 組織は最初から完成形を目指す必要はありません。まずは1体から。**必要に応じて育てるのが、一番うまくいくやり方**でした。
+
+---
+
+この記事の実践例を一冊にまとめました。
+
+[コードを書けない私がClaude Codeで「AIチーム」を作るまで（Zenn Books）](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)

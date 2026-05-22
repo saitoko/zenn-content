@@ -207,6 +207,10 @@ devopsの週次タスクに「エージェント定義の矛盾・ルールの�
 
 プログラミングを覚えなくても大丈夫です。あなたが持っているものが、そのまま武器になる。
 
+この記事の実践例を一冊にまとめました。
+
+[コードを書けない私がClaude Codeで「AIチーム」を作るまで（Zenn Books）](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)
+
 ---
 
 *この記事は Claude Code マルチエージェント組織を構築した話（[AIチームを組織した話](https://zenn.dev/tottoko_hamu/articles/claude-code-multi-agent-org)）の続編です。*

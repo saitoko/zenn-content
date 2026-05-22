@@ -145,3 +145,9 @@ Claude Code との対話で GTD を回すと、**仕分けが会話になり、�
 「おはよう、今日のタスク見せて」。この一言から始まる朝10分、試してみてください。
 
 https://github.com/saitoko/claude-todo-gtd
+
+---
+
+この記事の実践例を一冊にまとめました。
+
+[コードを書けない私がClaude Codeで「AIチーム」を作るまで（Zenn Books）](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)

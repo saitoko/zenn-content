@@ -289,3 +289,9 @@ reviewer は Phase 3 で researcher から分離して新設した（第4章参�
 ---
 
 この記事で紹介した組織の設計論は[Claude Code でAIチームを組織した](https://zenn.dev/tottoko_hamu/articles/claude-code-multi-agent-org)で、1日の運用体験は[AIチーム6人と過ごした1日](https://zenn.dev/tottoko_hamu/articles/claude-code-multi-agent-day)で詳しく紹介しています。
+
+---
+
+この記事の実践例を一冊にまとめました。
+
+[コードを書けない私がClaude Codeで「AIチーム」を作るまで（Zenn Books）](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)

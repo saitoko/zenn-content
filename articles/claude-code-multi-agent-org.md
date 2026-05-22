@@ -288,3 +288,9 @@ Claude Code のマルチエージェント組織は、特別な技術なしで�
 - **レビュー→差し戻し→修正**のサイクルで品質を担保する
 
 個人開発者でも「組織」は作れます。1人の万能アシスタントより、役割を持ったチームのほうが強い。それは AI でも人間でも同じでした。
+
+---
+
+この記事の実践例を一冊にまとめました。
+
+[コードを書けない私がClaude Codeで「AIチーム」を作るまで（Zenn Books）](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)

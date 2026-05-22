@@ -285,3 +285,9 @@ mkdir -p secretary/.claude
 スラッシュコマンドの本当の価値は、人間の利便性だけでなく、エージェントに共有インフラを与えることにあるのかもしれません。
 
 https://github.com/saitoko/claude-todo-gtd
+
+---
+
+この記事の実践例を一冊にまとめました。
+
+[コードを書けない私がClaude Codeで「AIチーム」を作るまで（Zenn Books）](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)
