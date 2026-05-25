@@ -20,7 +20,7 @@ summary: |
   本書を実践するには、Anthropicの有料プラン(月額$20〜)の契約が必要です。
   前作: [Vol.1「AIチームを作るまで」](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)
   著者: saitoko / ブログ「コードを書かないSE日誌」(blog.saitoko.net)を運営。
-topics: ["ai", "llm", "claude", "productivity"]
+topics: ["ai", "llm", "claude", "claudecode", "productivity"]
 published: true
 price: 900
 chapters:
