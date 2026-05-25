@@ -987,7 +987,7 @@ writer・reviewer・researcher・readerの作業を調整し、
 
 ## C-2. macOS セットアップチェックリスト
 
-> macOS の手順はWindowsとほぼ同様です。以下はWindowsとの主な差分をまとめています。インストールコマンドやURLはバージョンによって変わる可能性があるため、疑問が生じた場合は [Claude Code 公式ドキュメント](https://claude.ai/docs) でも確認してください。
+> macOS の手順はWindowsとほぼ同様です。以下はWindowsとの主な差分をまとめています。インストールコマンドやURLはバージョンによって変わる可能性があるため、疑問が生じた場合は [Claude Code 公式ドキュメント](https://code.claude.com/docs) でも確認してください。
 
 ### 事前準備（macOSとWindowsの差分）
 
@@ -1004,7 +1004,7 @@ writer・reviewer・researcher・readerの作業を調整し、
   curl -fsSL https://claude.ai/install.sh | bash
   ```
 
-  最新のインストールコマンドは [Claude Code 公式ドキュメント](https://claude.ai/docs) で確認してください。
+  最新のインストールコマンドは [Claude Code 公式ドキュメント](https://code.claude.com/docs) で確認してください。
 
 - [ ] `claude --version` でバージョン番号が表示されることを確認した
 

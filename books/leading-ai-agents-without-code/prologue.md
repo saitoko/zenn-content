@@ -22,7 +22,7 @@ Claude Codeを初めて触ったのは、「どんなもんだろう」という
 
 つまりこの本で話す内容は**すべて、メモリ8GBのWindows PCで実現したこと**です。高性能マシンが必要だったわけじゃなかった、というオチです。こういうことは、後になってから気づくものです。
 
-> 注文したMac miniはこちら。届いたら感想を追記します。
+> 注文したMac miniはこちら。M4チップ・メモリ24GBで現在も運用中です。
 > [Apple 2024 Mac mini（M4チップ搭載）](https://www.amazon.co.jp/dp/B0DLCCBD1H?tag=saitokohamu1-22)
 
 
