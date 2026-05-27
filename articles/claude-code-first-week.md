@@ -226,4 +226,8 @@ Claude Code を入れたら、新しいフォルダで起動して「あなた�
 - カスタムスキル入門 ── /health を30分で作った話。スキルファイルの構造から解説
 - Zenn → Qiita → はてな 三面展開クロスポスト ── 1コマンドで3サイト同時投稿
 
+この記事の6日間をさらに深掘りした一冊があります。
+
+[コードを書けない私がClaude Codeで「AIチーム」を作るまで（Zenn Books）](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)
+
 続編が気になる方は [Zenn でフォロー](https://zenn.dev/tottoko_hamu) していただけると通知が届きます。
