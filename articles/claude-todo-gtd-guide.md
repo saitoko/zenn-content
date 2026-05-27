@@ -407,5 +407,10 @@ Claude Code の基本的な使い方から実際の開発フローまで体系�
 Claude Code を「思考のパートナー」として使いこなすための考え方を扱った一冊。コードを書かない活用方法にも触れています。
 
 [Amazon で確認する](https://www.amazon.co.jp/dp/4297153548)
+
+この記事の `/todo` スキルを含む実践事例を一冊にまとめています。
+
+[コードを書けない私がClaude Codeで「AIチーム」を作るまで（Zenn Books）](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)
+
 ---
 *この記事は [はてなブログ](https://blog.saitoko.net/entry/claude-todo-gtd-guide?utm_source=zenn&utm_medium=crosspost) からのクロスポストです。*
