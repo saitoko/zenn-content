@@ -229,6 +229,10 @@ Claude Codeは「コードを書くエンジニア向けのツール」だけで
 
 ---
 
+この記事の実践例を一冊にまとめました。
+
+[コードを書けない私がClaude Codeで「AIチーム」を作るまで（Zenn Books）](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)
+
 *関連記事*
 
 - [Claude Code を6日使ったら秘書・ライター・リサーチャーが揃ったチームになっていた](https://zenn.dev/tottoko_hamu/articles/claude-code-first-week)

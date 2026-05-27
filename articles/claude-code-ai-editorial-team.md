@@ -540,3 +540,7 @@ AIは道具だけど、道具を組織にするのは設計だ。
 ---
 
 > この記事自体が、AIエージェント編集部のワークフローで制作されました。reviewerによる技術チェック+readerによるペルソナ評価を複数ラウンド実施し、事実の正確性修正・章構成の統合・プロンプト例の追加などを経て現在の版に至りました。
+
+この記事の実践をまとめた一冊があります。
+
+[コードを書けない私がClaude Codeで「AIチーム」を作るまで（Zenn Books）](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)

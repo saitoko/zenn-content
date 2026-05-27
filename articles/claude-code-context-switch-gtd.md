@@ -119,6 +119,10 @@ Claude Code単体でも、今日から「残作業は？」と聞くだけで使
 
 - [Claude Code で GTD を回す /todo スラッシュコマンドを作った](https://zenn.dev/tottoko_hamu/articles/claude-code-todo-gtd)（`/todo` スキルの詳細はこちら）
 
+この記事の実践をまとめた一冊があります。
+
+[コードを書けない私がClaude Codeで「AIチーム」を作るまで（Zenn Books）](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)
+
 ## この記事で使ったツールに関連する本
 
 - [実践Claude Code入門（技術評論社）](https://www.amazon.co.jp/dp/4297153548/?tag=saitokohamu1-22)
