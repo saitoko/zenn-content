@@ -112,3 +112,7 @@ PMなら「要件定義・レビュー・議事録」の担当を分ける設計
 ---
 
 *続く: 第1部「「コードを書けない」が武器になる時代」*
+
+---
+
+*チームを作り終えたら → [Vol.2「AIチームを回すまで」](https://zenn.dev/tottoko_hamu/books/operating-ai-team-without-code)で「回す」技術を扱っています（序章無料）*
