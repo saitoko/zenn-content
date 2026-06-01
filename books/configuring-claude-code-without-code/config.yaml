@@ -1,0 +1,42 @@
+title: "コードを書けない私がClaude Codeに「仕組み」を渡すまで"
+summary: |
+  本書は、Claude Codeで「AIチーム」を作り・回し・書き続けてきた著者が、次の問いに向き合った記録です。
+
+  「チームは動いている。では、どう仕込めばもっとうまく動くのか」——
+
+  CLAUDE.mdにルールを書いたのに守られない。サブエージェントに指示を渡したのに動かない。そのモヤモヤの正体は、「渡す場所」の設計にある。本書は、Claude Codeが自分で動けるようにするための7つのレイヤー（CLAUDE.md、サブエージェント、スキル、Playbook、メモリ、設定・権限、MCP）を一章ずつ解剖します。
+
+  ◆ 本書の通奏低音
+  「何を渡すか」と同時に「何を渡さないか」——渡しすぎないこと。
+
+  ◆ 7章構成
+  ・第1章 CLAUDE.md：ルールが読まれる仕組みを設計する
+  ・第2章 サブエージェント：役割境界と委任の機微
+  ・第3章 スキル：再現手順を畳み込む・退役で削る
+  ・第4章 Playbook：手順を残す・腐らせないサイクルを作る
+  ・第5章 メモリ：記憶の設計と肥大化の防ぎ方
+  ・第6章 設定・権限：最小権限原則と定期監査
+  ・第7章 MCP：繋いだ能力を仕事として回す
+
+  ◆ こんな方におすすめ
+  ・Claude Codeを使い込んでいるが「もっとうまく仕込めるはず」と感じている方
+  ・CLAUDE.mdを書いたが「効いているかどうかわからない」という方
+  ・スキル・Playbookを作り始めたが、設計の判断軸がない方
+
+  序章は無料公開しています。中身を確認してから購入をご判断ください。
+  本書を実践するには、Anthropicの有料プラン(月額$20〜)の契約が必要です。
+  前作: [Vol.3「AIチームと書き続けるまで」](https://zenn.dev/tottoko_hamu/books/writing-with-ai-team-without-code)
+  著者: saitoko / ブログ「コードを書かないSE日誌」(blog.saitoko.net)を運営。
+topics: ["ai", "llm", "claude", "claudecode", "productivity"]
+published: false
+price: 900
+chapters:
+  - prologue
+  - ch1-claude-md
+  - ch2-subagent
+  - ch3-skill
+  - ch4-playbook
+  - ch5-memory
+  - ch6-settings
+  - ch7-mcp
+  - epilogue
