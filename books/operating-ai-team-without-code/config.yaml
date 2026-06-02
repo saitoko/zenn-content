@@ -1,25 +1,28 @@
 title: "コードを書けない私がClaude Codeで「AIチーム」を回すまで"
 summary: |
-  **→ まず[序章（無料公開）](https://zenn.dev/tottoko_hamu/books/operating-ai-team-without-code/viewer/prologue)を読んでみてください。**
+  AIエージェントのチームを「作った」翌朝、手が止まった。
+  9体のエージェントが待機しているのに、何の指示も出せない——
+  そこから始まる本書は、「作る」と「回す」が別の技術だったという話です。
 
-  本書は、Claude Codeで9体のAIエージェント編集部を作った著者が、「回す」という次の壁にぶつかった記録です。
-
-  チームを「作る」ことと「回す」ことは、別の技術です。
-  設計図（エージェント定義ファイル）を手に入れただけでは、工場は動き出しません。
-  本書はその"翌朝の静けさ"から始まります。
+  本書を読み終えると、こんな変化が手元に残ります。
+  ・「6本の記事に一括レビュー依頼→1 OK と返すだけで公開ラインへ」が朝の景色になる
+  ・判断が「探す」から「選ぶ」に変わり、1日の意思決定が朝の10分に収まるようになる
+  ・reviewer × reader × 著者ペルソナの三層品質ゲートで、品質管理をチームに任せられる
+  ・事故が起きるたびにチームが強くなる仕組み（trigger リスト）を設計できる
 
   ◆ 本書で扱う3つのテーマ
   ・第1部「チームが動く組織設計」：Playbook・委任プロトコル・組織のリファクタリング
-  ・第2部「品質はチームに担保させる」：reviewer×reader×著者ペルソナの三層品質ゲート、Human in the loop
-  ・第3部「チームが自走し始めると改善が勝手に湧く」：事故と改善のサイクル、実際に起きた3つの事故の記録
+  ・第2部「走り出すと何が起きるか」：チームを回し始めた翌週から起きた3つの事故
+  ・第3部「事故と気づきから育つ仕組み」：Human in the loop、三層品質ゲート、事故をtriggerリストへ変換する設計
 
   ◆ こんな方におすすめ
-  ・[Vol.1](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)を読んで実際にAIチームを作ったが、うまく回せていない方
+  ・Claude Codeでエージェントを複数作ったが、うまく使いこなせていない方
   ・AIエージェントの「運用」に壁を感じている方
   ・Claude Codeで複数エージェントを動かしているが、品質管理に悩んでいる方
+  ・[Vol.1](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)を読んで実際にAIチームを作ったが、「回し方」が分からない方
 
   序章は無料公開しています。中身を確認してから購入をご判断ください。
-  本書を実践するには、Anthropicの有料プラン(月額$20〜)の契約が必要です。
+  本書を実践するには、Anthropicの有料プラン（Pro以上、月額$20〜）の契約が必要です。実際の制作規模ではMaxプラン相当が現実的です。
   前作: [Vol.1「AIチームを作るまで」](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)
   著者: saitoko / ブログ「コードを書かないSE日誌」(blog.saitoko.net)を運営。
 topics: ["ai", "llm", "claude", "claudecode", "productivity"]
