@@ -148,6 +148,7 @@ https://github.com/saitoko/claude-todo-gtd
 
 ---
 
-この記事の実践例を一冊にまとめました。
+朝の GTD ルーティンが手に入ると、次の問いが出てくる——そもそもこの `/todo` コマンドはどうやって動いているのか、もっと自分好みに育てることはできるのか。
+私はその答えを、Claude Code でエージェントチームを一から組み立てる過程で見つけました。設計思想から CLAUDE.md の書き方まで、コードを書かずにチームを動かすための体系を Zenn Book にまとめています。
 
-[コードを書けない私がClaude Codeで「AIチーム」を作るまで（Zenn Books）](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)
+[コードを書けない私が Claude Code で「AIチーム」を作るまで（序章・第1部無料）](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)

@@ -250,6 +250,8 @@ https://github.com/saitoko/claude-todo-gtd
 
 ---
 
-この記事の実践例を一冊にまとめました。
+GTD の Pro 機能をひととおり実装すると、次の問いが出てくる——こうした自動化の仕組みは、どうやってゼロから構築したのか。
 
-[コードを書けない私がClaude Codeで「AIチーム」を作るまで（Zenn Books）](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)
+私はコードを書かずに Claude Code でエージェントチームを作り、そこに `/todo` スキルを組み込んでいる。その全体像と設計の考え方を一冊にまとめた。
+
+[コードを書けない私がClaude Codeで「AIチーム」を作るまで（序章・第1部無料）](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)
