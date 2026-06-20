@@ -4,6 +4,7 @@ emoji: "💥"
 type: "tech"
 topics: ["テスト", "bash", "nodejs", "windows", "claudecode"]
 published: true
+canonical_url: "https://blog.saitoko.net/entry/2026/04/07/095100"
 ---
 
 ## テストは通る。だが代償があった。

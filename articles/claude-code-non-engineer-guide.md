@@ -4,6 +4,7 @@ emoji: "🗂️"
 type: "idea"
 topics: ["claudecode", "ai", "productivity", "nocode", "automation"]
 published: true
+canonical_url: "https://blog.saitoko.net/entry/2026/04/19/095933"
 ---
 
 コードが書けなくても、AIに仕事を任せられる時代になりました。

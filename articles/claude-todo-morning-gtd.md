@@ -4,6 +4,7 @@ emoji: "☀️"
 type: "tech"
 topics: ["claudecode", "gtd", "productivity", "ai", "taskmanagement"]
 published: true
+canonical_url: "https://blog.saitoko.net/entry/2026/04/07/111532"
 ---
 
 ## ☀️ 「おはよう」から始まる GTD

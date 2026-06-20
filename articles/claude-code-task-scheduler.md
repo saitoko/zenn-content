@@ -4,6 +4,7 @@ emoji: "⏰"
 type: "tech"
 topics: ["claudecode", "automation", "scheduler", "claude"]
 published: true
+canonical_url: "https://blog.saitoko.net/entry/2026/04/14/064219"
 ---
 <!-- from: writer | to: CEO | status: final-draft | date: 2026-04-13 | changes: レビュー指摘修正（必須2/推奨2/批判的5件対応）-->
 

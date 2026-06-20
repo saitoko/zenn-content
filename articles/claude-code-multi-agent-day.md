@@ -4,6 +4,7 @@ emoji: "🏭"
 type: "tech"
 topics: ["claudecode", "ai", "multiagent", "productivity", "automation"]
 published: true
+canonical_url: "https://blog.saitoko.net/entry/2026/04/08/221150"
 ---
 
 今朝、6人のAIチームに「出社指示」を出しました。

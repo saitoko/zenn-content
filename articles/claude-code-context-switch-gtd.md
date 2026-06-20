@@ -4,6 +4,7 @@ emoji: "🔄"
 type: "idea"
 topics: ["claudecode", "gtd", "productivity", "github", "ai"]
 published: true
+canonical_url: "https://blog.saitoko.net/entry/2026/04/18/200000"
 ---
 
 # 割り込みで頭がリセットされる問題を、Claude Codeで解消した話

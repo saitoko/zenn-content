@@ -4,6 +4,7 @@ emoji: "🤖"
 type: "tech"
 topics: ["claudecode", "gtd", "agent", "automation", "ai"]
 published: true
+canonical_url: "https://blog.saitoko.net/entry/2026/04/07/095106"
 ---
 
 ## 🧠 GTD、やってますか？

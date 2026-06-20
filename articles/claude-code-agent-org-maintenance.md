@@ -4,6 +4,7 @@ emoji: "🗂️"
 type: "tech"
 topics: ["claudecode", "multiagent", "aiagent", "management"]
 published: true
+canonical_url: "https://blog.saitoko.net/entry/2026/04/14/064233"
 ---
 
 **「なんかおかしくない？」——その一言で、logs/ 37件→7件（81%削減）、53ファイルの再編が動き出した。Claude Codeマルチエージェント組織を3日で散らかし、チャットだけで立て直した実録です。**

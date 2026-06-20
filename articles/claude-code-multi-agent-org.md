@@ -4,6 +4,7 @@ emoji: "🏢"
 type: "tech"
 topics: ["claudecode", "ai", "multiagent", "productivity", "automation"]
 published: true
+canonical_url: "https://blog.saitoko.net/entry/2026/04/09/072056"
 ---
 
 「1つの Claude Code で何でもやる」に限界を感じたのは、CLAUDE.md が50行を超えたあたりでした。

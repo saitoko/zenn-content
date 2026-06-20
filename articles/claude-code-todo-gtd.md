@@ -4,6 +4,7 @@ emoji: "✅"
 type: "tech"
 topics: ["claudecode", "gtd", "github", "cli", "productivity"]
 published: true
+canonical_url: "https://blog.saitoko.net/entry/2026/04/07/095108"
 ---
 
 ## 作ったもの

@@ -4,6 +4,7 @@ emoji: "💬"
 type: "idea"
 topics: ["claudecode", "ai", "multiagent", "productivity", "llm"]
 published: true
+canonical_url: "https://blog.saitoko.net/entry/2026/04/13/073615"
 ---
 
 <!-- from: writer | to: - | status: ready -->
