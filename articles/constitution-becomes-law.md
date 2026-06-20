@@ -4,6 +4,7 @@ emoji: "⚖️"
 type: "tech"
 topics: ["claudecode","multiagent","ai"]
 published: true
+canonical_url: "https://blog.saitoko.net/entry/constitution-becomes-law"
 ---
 <!-- from: writer | to: reviewer | source_netacho: 2026-04-23_netacho-constitution-becomes-law.md -->
 
