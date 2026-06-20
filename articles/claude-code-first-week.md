@@ -4,6 +4,7 @@ emoji: "⚡"
 type: "tech"
 topics: ["claudecode", "ai", "automation", "productivity", "agent"]
 published: true
+canonical_url: "https://blog.saitoko.net/entry/2026/04/19/095932"
 ---
 
 [Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview) を導入して6日が経ちました。
