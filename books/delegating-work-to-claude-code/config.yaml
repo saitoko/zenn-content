@@ -28,7 +28,7 @@ summary: |
   前作: [Vol.4「仕組みを渡すまで」](https://zenn.dev/tottoko_hamu/books/configuring-claude-code-without-code)
   著者: saitoko / ブログ「コードを書かないSE日誌」(blog.saitoko.net)を運営。
 topics: ["ai", "llm", "claude", "claudecode", "productivity"]
-published: false
+published: true
 price: 900
 chapters:
   - prologue
