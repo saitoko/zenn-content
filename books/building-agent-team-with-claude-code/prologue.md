@@ -1,12 +1,6 @@
 ---
-title: 序章「なんとなく使っている、から卒業する」
-chapter: 0
-target_reader: A層（1人で Claude Code を使うエンジニア）
-status: draft
-date: 2026-06-27
-references:
-  - content/writing/books/kindle-agent-team-intro/proposal.md
-  - content/writing/books/kindle-agent-team-intro/chapter-07.md
+title: "序章 なんとなく使っている、から卒業する"
+free: true
 ---
 
 # 序章 なんとなく使っている、から卒業する

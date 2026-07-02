@@ -1,12 +1,5 @@
 ---
-title: 第epilogue章「終章 チームを育てる視点」
-chapter: epilogue
-target_reader: A層（1人で Claude Code を使うエンジニア）
-status: draft
-date: 2026-06-28
-references:
-  - content/writing/books/kindle-agent-team-intro/proposal.md
-  - content/writing/books/kindle-agent-team-intro/chapter-07.md
+title: "終章 チームを育てる視点"
 ---
 
 # 終章 チームを育てる視点
