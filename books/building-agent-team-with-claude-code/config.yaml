@@ -34,7 +34,7 @@ summary: |
   本書を実践するには、AnthropicのProまたはMaxプラン（月額$20〜）の契約が必要です。
   著者: saitoko
 topics: ["ai", "llm", "claude", "claudecode", "個人開発"]
-published: false
+published: true
 price: 500
 chapters:
   - prologue
