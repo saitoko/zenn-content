@@ -111,3 +111,14 @@ title: "エピローグ Claude Codeに任せた先で起きたこと — すっ�
 「でも、最初の一言で何を作ってもらえばいいのか分からない」という人のために、装置を組み立てる最小の手順は第7章にまとめておきました。最小限で何が要るか、どこから手をつければいいかが、そこにあります。難しい準備は要りません。今日から始められます。
 
 今日の一言は小さくていい。けれど、その一言が文脈ごと残り、毎日積み重なった先に、私が出会ったものと同じ手応えが待っているかもしれません。あなたが話しかけた分だけ、装置はあなたのものに育っていきます。
+
+---
+
+## シリーズのご案内
+
+- [Vol.1 コードを書けない私がClaude Codeで「AIチーム」を作るまで](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)（序章・第1部無料）— 9体のエージェント編集部ができるまで
+- [Vol.2 コードを書けない私がClaude Codeで「AIチーム」を回すまで](https://zenn.dev/tottoko_hamu/books/operating-ai-team-without-code)（序章無料）— 運用・品質ゲート・事故対応の設計
+- [Vol.3 コードを書けない私がClaude Codeで「AIチーム」と書き続けるまで](https://zenn.dev/tottoko_hamu/books/writing-with-ai-team-without-code)（序章無料）— 書き続ける仕組みの育て方
+- [Vol.4 コードを書けない私がClaude Codeに「仕組み」を渡すまで](https://zenn.dev/tottoko_hamu/books/configuring-claude-code-without-code)（序章無料）— 渡す場所7レイヤーの解剖
+- **Vol.5 コードを書けない私がClaude Codeに「仕事」を任せるまで（本書）**
+- [Vol.6 Claude Codeで作る1人エージェントチーム](https://zenn.dev/tottoko_hamu/books/building-agent-team-with-claude-code)（序章無料）— エンジニア向け、2体から始めるサブエージェント設計

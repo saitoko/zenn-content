@@ -117,3 +117,14 @@ Hooks・Agent Skills・Plan mode を1人開発の文脈で解説します。
 ---
 
 では、始めましょう。第1章では、Claude Code とはそもそも何か——Web のチャット画面・Cursor・GitHub Copilot とどう違うのかを、1人開発者の視点で整理します。「基礎は知っている」なら第2章から入ってください。
+
+---
+
+## シリーズのご案内
+
+- [Vol.1 コードを書けない私がClaude Codeで「AIチーム」を作るまで](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)（序章・第1部無料）— 9体のエージェント編集部ができるまで
+- [Vol.2 コードを書けない私がClaude Codeで「AIチーム」を回すまで](https://zenn.dev/tottoko_hamu/books/operating-ai-team-without-code)（序章無料）— 運用・品質ゲート・事故対応の設計
+- [Vol.3 コードを書けない私がClaude Codeで「AIチーム」と書き続けるまで](https://zenn.dev/tottoko_hamu/books/writing-with-ai-team-without-code)（序章無料）— 書き続ける仕組みの育て方
+- [Vol.4 コードを書けない私がClaude Codeに「仕組み」を渡すまで](https://zenn.dev/tottoko_hamu/books/configuring-claude-code-without-code)（序章無料）— 渡す場所7レイヤーの解剖
+- [Vol.5 コードを書けない私がClaude Codeに「仕事」を任せるまで](https://zenn.dev/tottoko_hamu/books/delegating-work-to-claude-code)（序章無料）— GTDをまるごと任せる実録
+- **Vol.6 Claude Codeで作る1人エージェントチーム（本書）**

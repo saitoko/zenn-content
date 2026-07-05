@@ -105,3 +105,14 @@ Human in the loop の実態は、「介入しない」ではなかった。「�
 今朝、私の手は止まらない。けれど、止まる必要があるとき——チームがそれを求めるとき——私はちゃんと、止まれる。
 
 それが、私のチームと、私の、新しい関係だ。
+
+---
+
+## シリーズのご案内
+
+- [Vol.1 コードを書けない私がClaude Codeで「AIチーム」を作るまで](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)（序章・第1部無料）— 9体のエージェント編集部ができるまで
+- **Vol.2 コードを書けない私がClaude Codeで「AIチーム」を回すまで（本書）**
+- [Vol.3 コードを書けない私がClaude Codeで「AIチーム」と書き続けるまで](https://zenn.dev/tottoko_hamu/books/writing-with-ai-team-without-code)（序章無料）— 書き続ける仕組みの育て方
+- [Vol.4 コードを書けない私がClaude Codeに「仕組み」を渡すまで](https://zenn.dev/tottoko_hamu/books/configuring-claude-code-without-code)（序章無料）— 渡す場所7レイヤーの解剖
+- [Vol.5 コードを書けない私がClaude Codeに「仕事」を任せるまで](https://zenn.dev/tottoko_hamu/books/delegating-work-to-claude-code)（序章無料）— GTDをまるごと任せる実録
+- [Vol.6 Claude Codeで作る1人エージェントチーム](https://zenn.dev/tottoko_hamu/books/building-agent-team-with-claude-code)（序章無料）— エンジニア向け、2体から始めるサブエージェント設計

@@ -110,3 +110,14 @@ Vol.1 で「あなたの編集部」を作るまで、Vol.2 で Playbook と品�
 
 あなたの編集部は、もう動き始めている。
 
+---
+
+## シリーズのご案内
+
+- [Vol.1 コードを書けない私がClaude Codeで「AIチーム」を作るまで](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)（序章・第1部無料）— 9体のエージェント編集部ができるまで
+- [Vol.2 コードを書けない私がClaude Codeで「AIチーム」を回すまで](https://zenn.dev/tottoko_hamu/books/operating-ai-team-without-code)（序章無料）— 運用・品質ゲート・事故対応の設計
+- **Vol.3 コードを書けない私がClaude Codeで「AIチーム」と書き続けるまで（本書）**
+- [Vol.4 コードを書けない私がClaude Codeに「仕組み」を渡すまで](https://zenn.dev/tottoko_hamu/books/configuring-claude-code-without-code)（序章無料）— 渡す場所7レイヤーの解剖
+- [Vol.5 コードを書けない私がClaude Codeに「仕事」を任せるまで](https://zenn.dev/tottoko_hamu/books/delegating-work-to-claude-code)（序章無料）— GTDをまるごと任せる実録
+- [Vol.6 Claude Codeで作る1人エージェントチーム](https://zenn.dev/tottoko_hamu/books/building-agent-team-with-claude-code)（序章無料）— エンジニア向け、2体から始めるサブエージェント設計
+

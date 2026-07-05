@@ -82,3 +82,14 @@ title: "終章 チームを育てる視点"
 ここまで読んでくださって、ありがとうございました。
 
 仕組みは、本書ですべて渡しました。育て始めるスイッチは1つ——**この本を閉じた後、ターミナルを開くこと**です。1週間後、reviewer の最初の指摘に驚くあなた。1ヶ月後、コミット前のレビューが当たり前になっているあなた。半年後、新しいリポジトリに迷わず `.claude/` をコピーしているあなた。その入り口は、今あなたの手元にあります。あなたのチームに、幸あれ。
+
+---
+
+## シリーズのご案内
+
+- [Vol.1 コードを書けない私がClaude Codeで「AIチーム」を作るまで](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)（序章・第1部無料）— 9体のエージェント編集部ができるまで
+- [Vol.2 コードを書けない私がClaude Codeで「AIチーム」を回すまで](https://zenn.dev/tottoko_hamu/books/operating-ai-team-without-code)（序章無料）— 運用・品質ゲート・事故対応の設計
+- [Vol.3 コードを書けない私がClaude Codeで「AIチーム」と書き続けるまで](https://zenn.dev/tottoko_hamu/books/writing-with-ai-team-without-code)（序章無料）— 書き続ける仕組みの育て方
+- [Vol.4 コードを書けない私がClaude Codeに「仕組み」を渡すまで](https://zenn.dev/tottoko_hamu/books/configuring-claude-code-without-code)（序章無料）— 渡す場所7レイヤーの解剖
+- [Vol.5 コードを書けない私がClaude Codeに「仕事」を任せるまで](https://zenn.dev/tottoko_hamu/books/delegating-work-to-claude-code)（序章無料）— GTDをまるごと任せる実録
+- **Vol.6 Claude Codeで作る1人エージェントチーム（本書）**

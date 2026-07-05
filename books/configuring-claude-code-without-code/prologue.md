@@ -88,3 +88,14 @@ free: true
 だから、読み終わったらぜひ一つだけやってみてほしい。自分の CLAUDE.md を開いて、一行だけ直してみることだ。一行足すのでも、一行削るのでもいい。その一手が、仕組みを渡すという作業の、最初の一歩になる。
 
 では、最も触りやすく、最も誤解されているレイヤー——CLAUDE.md から始めよう。
+
+---
+
+## シリーズのご案内
+
+- [Vol.1 コードを書けない私がClaude Codeで「AIチーム」を作るまで](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)（序章・第1部無料）— 9体のエージェント編集部ができるまで
+- [Vol.2 コードを書けない私がClaude Codeで「AIチーム」を回すまで](https://zenn.dev/tottoko_hamu/books/operating-ai-team-without-code)（序章無料）— 運用・品質ゲート・事故対応の設計
+- [Vol.3 コードを書けない私がClaude Codeで「AIチーム」と書き続けるまで](https://zenn.dev/tottoko_hamu/books/writing-with-ai-team-without-code)（序章無料）— 書き続ける仕組みの育て方
+- **Vol.4 コードを書けない私がClaude Codeに「仕組み」を渡すまで（本書）**
+- [Vol.5 コードを書けない私がClaude Codeに「仕事」を任せるまで](https://zenn.dev/tottoko_hamu/books/delegating-work-to-claude-code)（序章無料）— GTDをまるごと任せる実録
+- [Vol.6 Claude Codeで作る1人エージェントチーム](https://zenn.dev/tottoko_hamu/books/building-agent-team-with-claude-code)（序章無料）— エンジニア向け、2体から始めるサブエージェント設計
