@@ -109,3 +109,10 @@ v2.1.98〜v2.1.109 の範囲で目立つのは「セッション管理の使い�
 :::message
 この記事は Claude Code のchangelogを、Claude Code 自身のエージェント組織（researcher が情報収集 → writer が執筆）で記事化しています。週次で更新予定。
 :::
+
+## この記事のテーマを深掘りした本
+
+**[Claude Codeで作る1人エージェントチーム](https://zenn.dev/tottoko_hamu/books/building-agent-team-with-claude-code)**
+エンジニア向け。writer + reviewer の2体から始めるサブエージェント設計（序章無料）
+
+シリーズ全6冊: [Vol.1 作るまで](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code) ／ [Vol.2 回すまで](https://zenn.dev/tottoko_hamu/books/operating-ai-team-without-code) ／ [Vol.3 書き続けるまで](https://zenn.dev/tottoko_hamu/books/writing-with-ai-team-without-code) ／ [Vol.4 仕組みを渡すまで](https://zenn.dev/tottoko_hamu/books/configuring-claude-code-without-code) ／ [Vol.5 仕事を任せるまで](https://zenn.dev/tottoko_hamu/books/delegating-work-to-claude-code) ／ [Vol.6 1人エージェントチーム](https://zenn.dev/tottoko_hamu/books/building-agent-team-with-claude-code)

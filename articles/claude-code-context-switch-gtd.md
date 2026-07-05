@@ -129,3 +129,10 @@ Claude Code単体でも、今日から「残作業は？」と聞くだけで使
 - [実践Claude Code入門（技術評論社）](https://www.amazon.co.jp/dp/4297153548/?tag=saitokohamu1-22)
 - [Claude CodeによるAI駆動開発入門（技術評論社）](https://www.amazon.co.jp/dp/4297152754/?tag=saitokohamu1-22)
 - [新装版 はじめてのGTD ストレスフリーの整理術（デビッド・アレン）](https://www.amazon.co.jp/dp/B0FQB574SS/?tag=saitokohamu1-22)
+
+## この記事のテーマを深掘りした本
+
+**[コードを書けない私がClaude Codeに「仕事」を任せるまで](https://zenn.dev/tottoko_hamu/books/delegating-work-to-claude-code)**
+GTDタスク管理をまるごとClaude Codeに任せるまでの実録（序章無料）
+
+シリーズ全6冊: [Vol.1 作るまで](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code) ／ [Vol.2 回すまで](https://zenn.dev/tottoko_hamu/books/operating-ai-team-without-code) ／ [Vol.3 書き続けるまで](https://zenn.dev/tottoko_hamu/books/writing-with-ai-team-without-code) ／ [Vol.4 仕組みを渡すまで](https://zenn.dev/tottoko_hamu/books/configuring-claude-code-without-code) ／ [Vol.5 仕事を任せるまで](https://zenn.dev/tottoko_hamu/books/delegating-work-to-claude-code) ／ [Vol.6 1人エージェントチーム](https://zenn.dev/tottoko_hamu/books/building-agent-team-with-claude-code)

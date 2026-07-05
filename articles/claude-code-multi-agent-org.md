@@ -295,3 +295,10 @@ Claude Code のマルチエージェント組織は、特別な技術なしで�
 この記事の実践例を一冊にまとめました。
 
 [コードを書けない私がClaude Codeで「AIチーム」を作るまで（Zenn Books）](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)
+
+## この記事のテーマを深掘りした本
+
+**[コードを書けない私がClaude Codeで「AIチーム」を作るまで](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)**
+コードを書かないSEが9体のAIエージェント編集部を作るまでの実録（序章・第1部無料）
+
+シリーズ全6冊: [Vol.1 作るまで](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code) ／ [Vol.2 回すまで](https://zenn.dev/tottoko_hamu/books/operating-ai-team-without-code) ／ [Vol.3 書き続けるまで](https://zenn.dev/tottoko_hamu/books/writing-with-ai-team-without-code) ／ [Vol.4 仕組みを渡すまで](https://zenn.dev/tottoko_hamu/books/configuring-claude-code-without-code) ／ [Vol.5 仕事を任せるまで](https://zenn.dev/tottoko_hamu/books/delegating-work-to-claude-code) ／ [Vol.6 1人エージェントチーム](https://zenn.dev/tottoko_hamu/books/building-agent-team-with-claude-code)

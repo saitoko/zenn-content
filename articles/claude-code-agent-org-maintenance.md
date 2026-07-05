@@ -215,3 +215,10 @@ devopsの週次タスクに「エージェント定義の矛盾・ルールの�
 ---
 
 *この記事は Claude Code マルチエージェント組織を構築した話（[AIチームを組織した話](https://zenn.dev/tottoko_hamu/articles/claude-code-multi-agent-org)）の続編です。*
+
+## この記事のテーマを深掘りした本
+
+**[コードを書けない私がClaude Codeで「AIチーム」を回すまで](https://zenn.dev/tottoko_hamu/books/operating-ai-team-without-code)**
+「作る」の次。運用・三層品質ゲート・事故対応の設計（序章無料）
+
+シリーズ全6冊: [Vol.1 作るまで](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code) ／ [Vol.2 回すまで](https://zenn.dev/tottoko_hamu/books/operating-ai-team-without-code) ／ [Vol.3 書き続けるまで](https://zenn.dev/tottoko_hamu/books/writing-with-ai-team-without-code) ／ [Vol.4 仕組みを渡すまで](https://zenn.dev/tottoko_hamu/books/configuring-claude-code-without-code) ／ [Vol.5 仕事を任せるまで](https://zenn.dev/tottoko_hamu/books/delegating-work-to-claude-code) ／ [Vol.6 1人エージェントチーム](https://zenn.dev/tottoko_hamu/books/building-agent-team-with-claude-code)

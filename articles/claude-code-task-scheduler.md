@@ -443,3 +443,10 @@ cd <リポジトリ名>
 今後試したいのは、Slack経由での動的なタスク追加・停止、タスク間の依存関係（「AのDONE後にBを実行」）あたりだ。Claude Codeのスケジュール機能自体も進化中なので、枠数の制約が将来的に変わる可能性もある。
 
 実際に使ってみて「このタスク定義の書き方が参考になった」「ここで詰まった」といったフィードバックをもらえると嬉しい。コメントでも、Zennのリアクションでも。
+
+## この記事のテーマを深掘りした本
+
+**[Claude Codeで作る1人エージェントチーム](https://zenn.dev/tottoko_hamu/books/building-agent-team-with-claude-code)**
+エンジニア向け。writer + reviewer の2体から始めるサブエージェント設計（序章無料）
+
+シリーズ全6冊: [Vol.1 作るまで](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code) ／ [Vol.2 回すまで](https://zenn.dev/tottoko_hamu/books/operating-ai-team-without-code) ／ [Vol.3 書き続けるまで](https://zenn.dev/tottoko_hamu/books/writing-with-ai-team-without-code) ／ [Vol.4 仕組みを渡すまで](https://zenn.dev/tottoko_hamu/books/configuring-claude-code-without-code) ／ [Vol.5 仕事を任せるまで](https://zenn.dev/tottoko_hamu/books/delegating-work-to-claude-code) ／ [Vol.6 1人エージェントチーム](https://zenn.dev/tottoko_hamu/books/building-agent-team-with-claude-code)

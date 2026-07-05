@@ -226,4 +226,12 @@ Claude Code を始めるなら、以下もエージェント設計の概念整�
 - [実践Claude Code入門――現場で活用するためのAIコーディングの思考法](https://www.amazon.co.jp/dp/4297153548) — MCP・エージェント連携の実践論
 
 ---
+
+## この記事のテーマを深掘りした本
+
+**[コードを書けない私がClaude Codeで「AIチーム」を回すまで](https://zenn.dev/tottoko_hamu/books/operating-ai-team-without-code)**
+「作る」の次。運用・三層品質ゲート・事故対応の設計（序章無料）
+
+シリーズ全6冊: [Vol.1 作るまで](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code) ／ [Vol.2 回すまで](https://zenn.dev/tottoko_hamu/books/operating-ai-team-without-code) ／ [Vol.3 書き続けるまで](https://zenn.dev/tottoko_hamu/books/writing-with-ai-team-without-code) ／ [Vol.4 仕組みを渡すまで](https://zenn.dev/tottoko_hamu/books/configuring-claude-code-without-code) ／ [Vol.5 仕事を任せるまで](https://zenn.dev/tottoko_hamu/books/delegating-work-to-claude-code) ／ [Vol.6 1人エージェントチーム](https://zenn.dev/tottoko_hamu/books/building-agent-team-with-claude-code)
+
 *この記事は [はてなブログ](https://blog.saitoko.net/entry/constitution-becomes-law?utm_source=zenn&utm_medium=crosspost) からのクロスポストです。*

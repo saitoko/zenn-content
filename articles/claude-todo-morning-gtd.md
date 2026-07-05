@@ -153,3 +153,10 @@ https://github.com/saitoko/claude-todo-gtd
 私はその答えを、Claude Code でエージェントチームを一から組み立てる過程で見つけました。設計思想から CLAUDE.md の書き方まで、コードを書かずにチームを動かすための体系を Zenn Book にまとめています。
 
 [コードを書けない私が Claude Code で「AIチーム」を作るまで（序章・第1部無料）](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)
+
+## この記事のテーマを深掘りした本
+
+**[コードを書けない私がClaude Codeに「仕事」を任せるまで](https://zenn.dev/tottoko_hamu/books/delegating-work-to-claude-code)**
+GTDタスク管理をまるごとClaude Codeに任せるまでの実録（序章無料）
+
+シリーズ全6冊: [Vol.1 作るまで](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code) ／ [Vol.2 回すまで](https://zenn.dev/tottoko_hamu/books/operating-ai-team-without-code) ／ [Vol.3 書き続けるまで](https://zenn.dev/tottoko_hamu/books/writing-with-ai-team-without-code) ／ [Vol.4 仕組みを渡すまで](https://zenn.dev/tottoko_hamu/books/configuring-claude-code-without-code) ／ [Vol.5 仕事を任せるまで](https://zenn.dev/tottoko_hamu/books/delegating-work-to-claude-code) ／ [Vol.6 1人エージェントチーム](https://zenn.dev/tottoko_hamu/books/building-agent-team-with-claude-code)

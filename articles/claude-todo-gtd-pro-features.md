@@ -256,3 +256,10 @@ GTD の Pro 機能をひととおり実装すると、次の問いが出てく�
 私はコードを書かずに Claude Code でエージェントチームを作り、そこに `/todo` スキルを組み込んでいる。その全体像と設計の考え方を一冊にまとめた。
 
 [コードを書けない私がClaude Codeで「AIチーム」を作るまで（序章・第1部無料）](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code)
+
+## この記事のテーマを深掘りした本
+
+**[コードを書けない私がClaude Codeに「仕事」を任せるまで](https://zenn.dev/tottoko_hamu/books/delegating-work-to-claude-code)**
+GTDタスク管理をまるごとClaude Codeに任せるまでの実録（序章無料）
+
+シリーズ全6冊: [Vol.1 作るまで](https://zenn.dev/tottoko_hamu/books/leading-ai-agents-without-code) ／ [Vol.2 回すまで](https://zenn.dev/tottoko_hamu/books/operating-ai-team-without-code) ／ [Vol.3 書き続けるまで](https://zenn.dev/tottoko_hamu/books/writing-with-ai-team-without-code) ／ [Vol.4 仕組みを渡すまで](https://zenn.dev/tottoko_hamu/books/configuring-claude-code-without-code) ／ [Vol.5 仕事を任せるまで](https://zenn.dev/tottoko_hamu/books/delegating-work-to-claude-code) ／ [Vol.6 1人エージェントチーム](https://zenn.dev/tottoko_hamu/books/building-agent-team-with-claude-code)
