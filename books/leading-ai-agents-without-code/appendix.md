@@ -1556,7 +1556,7 @@ Claude Codeを現場で使いこなすための思考法と実践手法を解説
 
 **Zenn**
 
-はてなブログ記事のクロスポスト先です。本書の続編 [Vol.2「AIチームを回すまで」](https://zenn.dev/saitoko/books/operating-ai-team-without-code) もZennで公開中です。
+はてなブログ記事のクロスポスト先です。本書の続編 [Vol.2「AIチームを回すまで」](https://zenn.dev/tottoko_hamu/books/operating-ai-team-without-code) もZennで公開中です。
 
 `zenn.dev/tottoko_hamu` でアクセスできます。
 
