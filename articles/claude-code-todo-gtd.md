@@ -134,6 +134,12 @@ https://github.com/saitoko/claude-todo-gtd
 
 フィードバックや改善提案は Issue でお待ちしています。
 
+## 関連記事
+
+この記事は `/todo` 初期リリース時（2026年4月）の紹介記事です。その後も機能追加が続いているため、GTD入門からクイックスタート、日常運用、FAQまでをまとめた最新版はこちらにあります。
+
+- *[今度こそ！ Claude CodeでGTDを回す——/todo 完全ガイド](https://zenn.dev/tottoko_hamu/articles/claude-todo-gtd-guide)*
+
 ---
 
 この記事の実践例を一冊にまとめました。

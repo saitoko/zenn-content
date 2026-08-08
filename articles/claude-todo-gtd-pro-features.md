@@ -249,6 +249,8 @@ Step 4: 一日のサマリー
 
 https://github.com/saitoko/claude-todo-gtd
 
+`/todo` の基本的な使い方や日常運用のフローを体系的に確認したい方は、[今度こそ！ Claude CodeでGTDを回す——/todo 完全ガイド](https://zenn.dev/tottoko_hamu/articles/claude-todo-gtd-guide)にGTD入門から5分クイックスタート、日常運用の3フローまでまとめてある。
+
 ---
 
 GTD の Pro 機能をひととおり実装すると、次の問いが出てくる——こうした自動化の仕組みは、どうやってゼロから構築したのか。

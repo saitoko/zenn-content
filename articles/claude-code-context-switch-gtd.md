@@ -85,6 +85,10 @@ GTDでいう「頭の外に出す」先として、GitHub Issueが使いやす�
 
 Issueに「次はこれをやる」と書いておくこと自体が、割り込みコストを下げる。
 
+`/todo` はこの記事のために作った架空の例ではなく、公開している OSS の Claude Code スキル `claude-todo-gtd` だ。Issue の一覧表示・優先度変更・週次レビューまで、ここで見せたコマンドがそのまま動く。気になる方はリポジトリを覗いてみてほしい。
+
+公開リポジトリ: https://github.com/saitoko/claude-todo-gtd
+
 ## うまくいかないこと
 
 正直に書く。
@@ -119,6 +123,7 @@ Claude Code単体でも、今日から「残作業は？」と聞くだけで使
 ## 関連記事
 
 - [Claude Code で GTD を回す /todo スラッシュコマンドを作った](https://zenn.dev/tottoko_hamu/articles/claude-code-todo-gtd)（`/todo` スキルの詳細はこちら）
+- [今度こそ！ Claude CodeでGTDを回す——/todo 完全ガイド](https://zenn.dev/tottoko_hamu/articles/claude-todo-gtd-guide)（インストール手順から日常運用まで1本でまとめたガイド）
 
 この記事の実践をまとめた一冊があります。
 

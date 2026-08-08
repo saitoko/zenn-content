@@ -23,6 +23,7 @@ canonical_url: "https://blog.saitoko.net/entry/2026/04/07/111532"
 > - 第1弾: [/todo コマンド紹介](https://zenn.dev/tottoko_hamu/articles/claude-code-todo-gtd)
 > - 第2弾: [Pro機能を実装した話](https://zenn.dev/tottoko_hamu/articles/claude-todo-gtd-pro-features)
 > - 第3弾: [エージェントに /todo を持たせた話](https://zenn.dev/tottoko_hamu/articles/claude-todo-agent-gtd)
+> - 完全ガイド: [今度こそ！ Claude CodeでGTDを回す——/todo 完全ガイド](https://zenn.dev/tottoko_hamu/articles/claude-todo-gtd-guide)
 
 ## 📋 ダッシュボードで「今日」を把握する
 

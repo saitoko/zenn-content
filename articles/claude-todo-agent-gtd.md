@@ -224,6 +224,10 @@ Phase 4: 表示関数の多言語化
 
 https://zenn.dev/tottoko_hamu/articles/claude-code-todo-gtd
 
+GTD入門からクイックスタート、日常運用、FAQまでを1本にまとめた最新版もあります。
+
+- *[今度こそ！ Claude CodeでGTDを回す——/todo 完全ガイド](https://zenn.dev/tottoko_hamu/articles/claude-todo-gtd-guide)*
+
 :::details 2. 秘書エージェント用のサブプロジェクトを作る
 ```bash
 mkdir -p secretary/.claude
